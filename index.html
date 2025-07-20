@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oson Farm</title>
+    <link rel="stylesheet" href="oson.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#products">Products & Services</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#order">Order/Booking</a></li>
+            <li><a href="#production">Production Data</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Oson Farm</h1>
+        <p>Welcome to Oson Farm! We offer a variety of agricultural products and services.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Oson Farm is a family-owned business dedicated to sustainable agriculture and quality produce. Our mission is to provide fresh, organic products and excellent service to our community. We believe in eco-friendly farming and supporting local livelihoods.</p>
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimonials</h2>
+        <blockquote>"The freshest avocados and friendliest service! Highly recommend Oson Farm."<br><span>- Jane D.</span></blockquote>
+        <blockquote>"I booked a BnB at Oson Farm and loved the peaceful environment and delicious farm products."<br><span>- Michael K.</span></blockquote>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="product-list">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Farm Landscape" style="width:200px; margin:0.5em; border-radius:8px;">
+            <img src="https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=400&q=80" alt="Farmers at Work" style="width:200px; margin:0.5em; border-radius:8px;">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Hay Bales" style="width:200px; margin:0.5em; border-radius:8px;">
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li><strong>Do you deliver?</strong> Yes, we deliver coffee seedlings, avocados, and other products within the region.</li>
+            <li><strong>How can I book a rental house?</strong> Use the order/booking form above and select "Rental House/BnB".</li>
+            <li><strong>Can I visit the farm?</strong> Yes! Contact us to schedule a visit or farm tour.</li>
+            <li><strong>What payment methods do you accept?</strong> We accept cash, mobile money, and bank transfers.</li>
+        </ul>
+    </section>
+
+    <section id="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <form id="newsletter-form" onsubmit="event.preventDefault(); document.getElementById('newsletter-success').style.display='block'; this.reset();">
+            <label for="newsletter-email">Email:</label>
+            <input type="email" id="newsletter-email" name="newsletter-email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="newsletter-success" style="display:none; color:green;">Thank you for subscribing!</p>
+    </section>
+
+    <section id="products">
+        <h2>Products & Services</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <!-- AI Image: "A tray of healthy coffee seedlings in a greenhouse, vibrant green leaves, natural light" -->
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Coffee Seedlings">
+                <strong>Coffee Seedlings</strong>
+                <p>Order & Delivery available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Fresh ripe avocados in a basket, farm background, natural lighting" -->
+                <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" alt="Avocado Fruits">
+                <strong>Avocado Fruits</strong>
+                <p>Order & Delivery available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "A pile of ripe pineapples on a farm table, tropical setting" -->
+                <img src="https://images.unsplash.com/photo-1502741338009-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Pineapples">
+                <strong>Pineapples</strong>
+                <p>Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Bales of hay stacked in a barn, sunny day" -->
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Hay">
+                <strong>Hay</strong>
+                <p>Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Silage in plastic-wrapped bales on a farm field" -->
+                <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400&q=80" alt="Silage">
+                <strong>Silage</strong>
+                <p>Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Fresh fish displayed on ice, farm background" -->
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Fish">
+                <strong>Fish</strong>
+                <p>Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Healthy chickens in a free-range farm, some live, some ready for cooking" -->
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=400&q=80" alt="Chicken">
+                <strong>Chicken</strong>
+                <p>Live or Slaughtered, Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Dairy cows grazing, milk canisters in foreground, green pasture" -->
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Cow Milk">
+                <strong>Cow Milk</strong>
+                <p>Production data available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Modern rental house on a farm, cozy and inviting, BnB style" -->
+                <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=400&q=80" alt="Rental Houses/BnB">
+                <strong>Rental Houses/BnB</strong>
+                <p>Booking available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Delivery van with Oson Farm logo, loaded with farm goods, rural road" -->
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Car for Delivery">
+                <strong>Car for Delivery</strong>
+                <p>Booking available</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order">
+        <h2>Order/Booking</h2>
+        <form id="order-form" onsubmit="event.preventDefault(); document.getElementById('order-success').style.display='block'; this.reset();">
+            <label for="product">Select Product/Service:</label>
+            <select id="product" name="product">
+                <option value="coffee">Coffee Seedlings</option>
+                <option value="avocado">Avocado Fruits</option>
+                <option value="pineapple">Pineapples</option>
+                <option value="hay">Hay</option>
+                <option value="silage">Silage</option>
+                <option value="fish">Fish</option>
+                <option value="chicken">Chicken (Live)</option>
+                <option value="chicken_slaughtered">Chicken (Slaughtered)</option>
+                <option value="milk">Cow Milk</option>
+                <option value="bnb">Rental House/BnB</option>
+                <option value="car_delivery">Car for Delivery</option>
+            </select><br><br>
+            <label for="quantity">Quantity/Details:</label>
+            <input type="text" id="quantity" name="quantity"><br><br>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="contact">Contact Info:</label>
+            <input type="text" id="contact" name="contact"><br><br>
+            <button type="submit">Submit Order/Booking</button>
+        </form>
+        <p id="order-success" style="display:none; color:green;">Thank you for your order/booking! We will contact you soon.</p>
+    </section>
+
+    <section id="production">
+        <h2>Production Data</h2>
+        <h3>Cow Milk Production</h3>
+        <p>Milk production data will be displayed here.</p>
+        <h3>Chicken Production</h3>
+        <p>Chicken production data will be displayed here.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="message_name">Name:</label>
+            <input type="text" id="message_name" name="message_name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Location: Oson Farm, [Your Address Here]</p>
+        <p>Phone: [Your Phone Number Here]</p>
+        <p>Email: [Your Email Here]</p>
+        <div style="margin:1em 0;">
+            <a href="https://facebook.com" target="_blank">Facebook</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a> |
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+        <div style="width:100%;height:300px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.9999999999995!2d36.82194631526044!3d-1.2920659999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d4c7e7b7b7%3A0x7d7d7d7d7d7d7d7d!2sNairobi!5e0!3m2!1sen!2ske!4v1610000000000!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+</body>
+</html>

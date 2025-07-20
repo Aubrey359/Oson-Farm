@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+    color: #222;
+}
+nav {
+    background: #2d572c;
+    padding: 0.5em 0;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    margin: 0 1.5em;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+nav ul li a:hover {
+    color: #ffd700;
+}
+section {
+    background: #fff;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 10px;
+    max-width: 700px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+h1, h2, h3 {
+    color: #2d572c;
+}
+ul {
+    padding-left: 1.2em;
+}
+form label {
+    display: block;
+    margin-top: 1em;
+    font-weight: 500;
+}
+form input, form select, form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.3em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+form button {
+    margin-top: 1.2em;
+    background: #2d572c;
+    color: #fff;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #1e3d1a;
+}
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+}
+.product-item {
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    padding: 1em;
+    width: 200px;
+    text-align: center;
+}
+.product-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.5em;
+    background: #e0e0e0;
+}
+blockquote {
+    background: #f9f9f9;
+    border-left: 4px solid #2d572c;
+    padding: 1em;
+    margin: 1em 0;
+    font-style: italic;
+}
+blockquote span {
+    color: #666;
+    font-size: 0.9em;
+}
+@media (max-width: 800px) {
+    section { max-width: 98vw; padding: 1em; }
+    .product-list { flex-direction: column; align-items: center; }
+    .product-item { width: 90vw; }
+}

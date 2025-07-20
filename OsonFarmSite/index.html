@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oson Farm</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f8f8;
+            color: #222;
+        }
+        nav {
+            background: #2d572c;
+            padding: 0.5em 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 1.5em;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        section {
+            background: #fff;
+            margin: 2em auto;
+            padding: 2em;
+            border-radius: 10px;
+            max-width: 700px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        h1, h2, h3 {
+            color: #2d572c;
+        }
+        ul {
+            padding-left: 1.2em;
+        }
+        form label {
+            display: block;
+            margin-top: 1em;
+            font-weight: 500;
+        }
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 0.3em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        form button {
+            margin-top: 1.2em;
+            background: #2d572c;
+            color: #fff;
+            border: none;
+            padding: 0.7em 1.5em;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        form button:hover {
+            background: #1e3d1a;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+            justify-content: center;
+        }
+        .product-item {
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            padding: 1em;
+            width: 200px;
+            text-align: center;
+        }
+        .product-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 0.5em;
+            background: #e0e0e0;
+        }
+        @media (max-width: 800px) {
+            section { max-width: 98vw; padding: 1em; }
+            .product-list { flex-direction: column; align-items: center; }
+            .product-item { width: 90vw; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products & Services</a></li>
+            <li><a href="#order">Order/Booking</a></li>
+            <li><a href="#production">Production Data</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Oson Farm</h1>
+        <p>Welcome to Oson Farm! We offer a variety of agricultural products and services.</p>
+    </section>
+
+    <section id="products">
+        <h2>Products & Services</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <!-- AI Image: "A tray of healthy coffee seedlings in a greenhouse, vibrant green leaves, natural light" -->
+                <img src="coffee-seedlings.jpg" alt="Coffee Seedlings">
+                <strong>Coffee Seedlings</strong>
+                <p>Order & Delivery available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Fresh ripe avocados in a basket, farm background, natural lighting" -->
+                <img src="avocado.jpg" alt="Avocado Fruits">
+                <strong>Avocado Fruits</strong>
+                <p>Order & Delivery available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "A pile of ripe pineapples on a farm table, tropical setting" -->
+                <img src="pineapple.jpg" alt="Pineapples">
+                <strong>Pineapples</strong>
+                <p>Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Bales of hay stacked in a barn, sunny day" -->
+                <img src="hay.jpg" alt="Hay">
+                <strong>Hay</strong>
+                <p>Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Silage in plastic-wrapped bales on a farm field" -->
+                <img src="silage.jpg" alt="Silage">
+                <strong>Silage</strong>
+                <p>Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Fresh fish displayed on ice, farm background" -->
+                <img src="fish.jpg" alt="Fish">
+                <strong>Fish</strong>
+                <p>Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Healthy chickens in a free-range farm, some live, some ready for cooking" -->
+                <img src="chicken.jpg" alt="Chicken">
+                <strong>Chicken</strong>
+                <p>Live or Slaughtered, Order available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Dairy cows grazing, milk canisters in foreground, green pasture" -->
+                <img src="cow-milk.jpg" alt="Cow Milk">
+                <strong>Cow Milk</strong>
+                <p>Production data available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Modern rental house on a farm, cozy and inviting, BnB style" -->
+                <img src="bnb.jpg" alt="Rental Houses/BnB">
+                <strong>Rental Houses/BnB</strong>
+                <p>Booking available</p>
+            </div>
+            <div class="product-item">
+                <!-- AI Image: "Delivery van with Oson Farm logo, loaded with farm goods, rural road" -->
+                <img src="car-delivery.jpg" alt="Car for Delivery">
+                <strong>Car for Delivery</strong>
+                <p>Booking available</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="order">
+        <h2>Order/Booking</h2>
+        <form>
+            <label for="product">Select Product/Service:</label>
+            <select id="product" name="product">
+                <option value="coffee">Coffee Seedlings</option>
+                <option value="avocado">Avocado Fruits</option>
+                <option value="pineapple">Pineapples</option>
+                <option value="hay">Hay</option>
+                <option value="silage">Silage</option>
+                <option value="fish">Fish</option>
+                <option value="chicken">Chicken (Live)</option>
+                <option value="chicken_slaughtered">Chicken (Slaughtered)</option>
+                <option value="milk">Cow Milk</option>
+                <option value="bnb">Rental House/BnB</option>
+                <option value="car_delivery">Car for Delivery</option>
+            </select><br><br>
+            <label for="quantity">Quantity/Details:</label>
+            <input type="text" id="quantity" name="quantity"><br><br>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="contact">Contact Info:</label>
+            <input type="text" id="contact" name="contact"><br><br>
+            <button type="submit">Submit Order/Booking</button>
+        </form>
+    </section>
+
+    <section id="production">
+        <h2>Production Data</h2>
+        <h3>Cow Milk Production</h3>
+        <p>Milk production data will be displayed here.</p>
+        <h3>Chicken Production</h3>
+        <p>Chicken production data will be displayed here.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="message_name">Name:</label>
+            <input type="text" id="message_name" name="message_name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Location: Oson Farm, [Your Address Here]</p>
+        <p>Phone: [Your Phone Number Here]</p>
+        <p>Email: [Your Email Here]</p>
+    </section>
+</body>
+</html>
