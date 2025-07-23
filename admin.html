@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Oson Farm Products</title>
+    <link rel="stylesheet" href="oson.css">
+    <style>
+        .admin-container { max-width: 600px; margin: 2rem auto; padding: 2rem; background: #f9f9f9; border-radius: 8px; }
+        .admin-container h2 { text-align: center; }
+        .admin-container form { display: flex; flex-direction: column; gap: 1rem; }
+        .admin-container input, .admin-container textarea { padding: 0.5rem; }
+        .product-list-admin { margin-top: 2rem; }
+        .product-item-admin { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .product-item-admin img { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; }
+        .remove-btn { background: #e74c3c; color: #fff; border: none; padding: 0.3rem 0.7rem; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h2>Oson Farm Products Admin</h2>
+        <p>Use this form to add new products. Changes are saved in your browser only (localStorage). To reset, clear your browser storage.</p>
+        <form id="product-form">
+            <input type="text" id="image" placeholder="Image filename (e.g. avocado.jpg)" required>
+            <input type="text" id="alt" placeholder="Image alt text" required>
+            <input type="text" id="name" placeholder="Product name" required>
+            <textarea id="description" placeholder="Product description" required></textarea>
+            <button type="submit">Add Product</button>
+        </form>
+        <div class="product-list-admin" id="admin-product-list"></div>
+    </div>
+    <script>
+        // Load products from localStorage or default
+        function getProducts() {
+            const local = localStorage.getItem('productsData');
+            if (local) return JSON.parse(local);
+            return [];
+        }
+        function setProducts(products) {
+            localStorage.setItem('productsData', JSON.stringify(products));
+        }
+        function renderAdminList() {
+            const list = document.getElementById('admin-product-list');
+            const products = getProducts();
+            if (products.length === 0) {
+                list.innerHTML = '<em>No products added yet.</em>';
+                return;
+            }
+            list.innerHTML = products.map((p, i) => `
+                <div class="product-item-admin">
+                    <img src="${p.image}" alt="${p.alt}">
+                    <div>
+                        <strong>${p.name}</strong><br>
+                        <small>${p.description}</small>
+                    </div>
+                    <button class="remove-btn" onclick="removeProduct(${i})">Remove</button>
+                </div>
+            `).join('');
+        }
+        function removeProduct(idx) {
+            const products = getProducts();
+            products.splice(idx, 1);
+            setProducts(products);
+            renderAdminList();
+        }
+        document.getElementById('product-form').onsubmit = function(e) {
+            e.preventDefault();
+            const image = document.getElementById('image').value.trim();
+            const alt = document.getElementById('alt').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const description = document.getElementById('description').value.trim();
+            if (!image || !alt || !name || !description) return;
+            const products = getProducts();
+            products.push({ image, alt, name, description });
+            setProducts(products);
+            renderAdminList();
+            this.reset();
+        };
+        renderAdminList();
+    </script>
+</body>
+</html> 

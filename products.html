@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Services - Oson Farm</title>
+    <link rel="stylesheet" href="oson.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="products.html">Products & Services</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="order.html">Order/Booking</a></li>
+            <li><a href="production.html">Production Data</a></li>
+            <li><a href="newsletter.html">Newsletter</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section id="products">
+        <h2>Products & Services</h2>
+        <div id="product-list"></div>
+    </section>
+    <script src="products.js"></script>
+    <script>
+        // Render products dynamically, prefer localStorage if available
+        document.addEventListener('DOMContentLoaded', function() {
+            const productList = document.getElementById('product-list');
+            let data = [];
+            try {
+                const local = localStorage.getItem('productsData');
+                if (local) {
+                    data = JSON.parse(local);
+                } else {
+                    data = productsData;
+                }
+            } catch (e) {
+                data = productsData;
+            }
+            if (Array.isArray(data)) {
+                productList.innerHTML = data.map((product, idx) => `
+                    <div class="product-item">
+                        <img src="${product.image}" alt="${product.alt}">
+                        <strong>${product.name}</strong>
+                        <p>${product.description}</p>
+                        <button onclick="orderProduct('${product.name.replace(/'/g, "\\'")}')">Order</button>
+                    </div>
+                `).join('');
+            }
+        });
+        function orderProduct(productName) {
+            alert('Order attempted for: ' + productName + '\nA notification has been sent to the site owner.');
+        }
+    </script>
+</body>
+</html> 
