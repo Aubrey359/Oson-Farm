@@ -1,51 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order/Booking - Oson Farm</title>
-    <link rel="stylesheet" href="oson.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order/Booking - Oson Farm</title>
+  <link rel="stylesheet" href="../oson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="products.html">Products & Services</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="order.html">Order/Booking</a></li>
-            <li><a href="production.html">Production Data</a></li>
-            <li><a href="newsletter.html">Newsletter</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
-    <section id="order">
-        <h2>Order/Booking</h2>
-        <form>
-            <label for="product">Select Product/Service:</label>
-            <select id="product" name="product">
-                <option value="coffee">Coffee Seedlings</option>
-                <option value="avocado">Avocado Fruits</option>
-                <option value="pineapple">Pineapples</option>
-                <option value="hay">Hay</option>
-                <option value="silage">Silage</option>
-                <option value="fish">Fish</option>
-                <option value="chicken">Chicken (Live)</option>
-                <option value="chicken_slaughtered">Chicken (Slaughtered)</option>
-                <option value="milk">Cow Milk</option>
-                <option value="bnb">Rental House/BnB</option>
-                <option value="car_delivery">Car for Delivery</option>
-            </select><br><br>
-            <label for="quantity">Quantity/Details:</label>
-            <input type="text" id="quantity" name="quantity"><br><br>
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="contact">Contact Info:</label>
-            <input type="text" id="contact" name="contact"><br><br>
-            <button type="submit">Submit Order/Booking</button>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="products.html">Products & Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="order.html" class="active">Order/Booking</a></li>
+      <li><a href="production.html">Production Data</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Order & Booking</h1>
+      <p class="hero-subtitle">Place your order for fresh produce or book a farm visit to experience sustainable agriculture firsthand.</p>
+    </div>
+  </section>
+
+  <!-- Order Type Selection -->
+  <section>
+    <div class="container">
+      <h2 class="text-center">What would you like to do?</h2>
+      <div class="features-grid">
+        <div class="feature-card" onclick="showOrderForm()">
+          <div class="feature-icon"><i class="fas fa-shopping-cart"></i></div>
+          <h3>Place an Order</h3>
+          <p>Order fresh produce, coffee seedlings, livestock products, and more from our farm.</p>
+          <button class="btn">Start Ordering</button>
+        </div>
+        
+        <div class="feature-card" onclick="showBookingForm()">
+          <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Book a Farm Visit</h3>
+          <p>Schedule a farm tour, educational visit, or farm stay experience.</p>
+          <button class="btn">Book Visit</button>
+        </div>
+        
+        <div class="feature-card" onclick="showDeliveryForm()">
+          <div class="feature-icon"><i class="fas fa-truck"></i></div>
+          <h3>Schedule Delivery</h3>
+          <p>Arrange delivery services for your orders or special requests.</p>
+          <button class="btn">Schedule Delivery</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Order Form -->
+  <section id="order-form" class="order-section" style="display: none;">
+    <div class="container">
+      <h2>Place Your Order</h2>
+      <div class="card">
+        <form id="product-order-form">
+          <div class="grid grid-2">
+            <div>
+              <h3>Customer Information</h3>
+              <div class="form-group">
+                <label for="customer_name">Full Name *</label>
+                <input type="text" id="customer_name" name="customer_name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="customer_email">Email Address *</label>
+                <input type="email" id="customer_email" name="customer_email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="customer_phone">Phone Number *</label>
+                <input type="tel" id="customer_phone" name="customer_phone" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="delivery_address">Delivery Address</label>
+                <textarea id="delivery_address" name="delivery_address" rows="3" placeholder="Enter full delivery address (optional)"></textarea>
+              </div>
+            </div>
+            
+            <div>
+              <h3>Order Details</h3>
+              <div class="form-group">
+                <label for="order_type">Order Type *</label>
+                <select id="order_type" name="order_type" required onchange="updateProductOptions()">
+                  <option value="">Select order type</option>
+                  <option value="coffee-seedlings">Coffee Seedlings</option>
+                  <option value="fresh-produce">Fresh Produce</option>
+                  <option value="livestock">Livestock Products</option>
+                  <option value="services">Farm Services</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="product_selection">Product Selection *</label>
+                <select id="product_selection" name="product_selection" required>
+                  <option value="">Select a product</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="quantity">Quantity *</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="special_instructions">Special Instructions</label>
+                <textarea id="special_instructions" name="special_instructions" rows="3" placeholder="Any special requirements or notes"></textarea>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="preferred_delivery">Preferred Delivery/Pickup Date</label>
+            <input type="date" id="preferred_delivery" name="preferred_delivery">
+          </div>
+          
+          <button type="submit" class="btn">
+            <i class="fas fa-shopping-cart"></i>
+            Place Order
+          </button>
         </form>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Farm Visit Booking Form -->
+  <section id="booking-form" class="order-section" style="display: none;">
+    <div class="container">
+      <h2>Book a Farm Visit</h2>
+      <div class="card">
+        <form id="visit-booking-form">
+          <div class="grid grid-2">
+            <div>
+              <h3>Visit Information</h3>
+              <div class="form-group">
+                <label for="visit_type">Visit Type *</label>
+                <select id="visit_type" name="visit_type" required>
+                  <option value="">Select visit type</option>
+                  <option value="farm-tour">Farm Tour (1-2 hours)</option>
+                  <option value="educational">Educational Visit (3-4 hours)</option>
+                  <option value="farm-stay">Farm Stay (Overnight)</option>
+                  <option value="group-visit">Group Visit (5+ people)</option>
+                  <option value="private-tour">Private Tour</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="visit_date">Preferred Date *</label>
+                <input type="date" id="visit_date" name="visit_date" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="visit_time">Preferred Time *</label>
+                <select id="visit_time" name="visit_time" required>
+                  <option value="">Select time</option>
+                  <option value="09:00">9:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="15:00">3:00 PM</option>
+                  <option value="16:00">4:00 PM</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="group_size">Group Size *</label>
+                <input type="number" id="group_size" name="group_size" min="1" max="50" required>
+              </div>
+            </div>
+            
+            <div>
+              <h3>Contact Information</h3>
+              <div class="form-group">
+                <label for="booking_name">Full Name *</label>
+                <input type="text" id="booking_name" name="booking_name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="booking_email">Email Address *</label>
+                <input type="email" id="booking_email" name="booking_email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="booking_phone">Phone Number *</label>
+                <input type="tel" id="booking_phone" name="booking_phone" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="organization">Organization/Company</label>
+                <input type="text" id="organization" name="organization" placeholder="School, company, or group name">
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="visit_purpose">Purpose of Visit</label>
+            <textarea id="visit_purpose" name="visit_purpose" rows="3" placeholder="Educational goals, special interests, or specific areas you'd like to focus on"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="special_needs">Special Requirements</label>
+            <textarea id="special_needs" name="special_needs" rows="2" placeholder="Accessibility needs, dietary restrictions, or other special requirements"></textarea>
+          </div>
+          
+          <button type="submit" class="btn">
+            <i class="fas fa-calendar-check"></i>
+            Book Visit
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Scheduling Form -->
+  <section id="delivery-form" class="order-section" style="display: none;">
+    <div class="container">
+      <h2>Schedule Delivery</h2>
+      <div class="card">
+        <form id="delivery-scheduling-form">
+          <div class="grid grid-2">
+            <div>
+              <h3>Delivery Information</h3>
+              <div class="form-group">
+                <label for="delivery_name">Full Name *</label>
+                <input type="text" id="delivery_name" name="delivery_name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="delivery_email">Email Address *</label>
+                <input type="email" id="delivery_email" name="delivery_email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="delivery_phone">Phone Number *</label>
+                <input type="tel" id="delivery_phone" name="delivery_phone" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="delivery_address_full">Delivery Address *</label>
+                <textarea id="delivery_address_full" name="delivery_address_full" rows="3" required placeholder="Street address, city, state, ZIP code"></textarea>
+              </div>
+            </div>
+            
+            <div>
+              <h3>Delivery Details</h3>
+              <div class="form-group">
+                <label for="delivery_type">Delivery Type *</label>
+                <select id="delivery_type" name="delivery_type" required>
+                  <option value="">Select delivery type</option>
+                  <option value="standard">Standard Delivery (3-5 days)</option>
+                  <option value="express">Express Delivery (1-2 days)</option>
+                  <option value="same-day">Same Day Delivery</option>
+                  <option value="scheduled">Scheduled Delivery</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="delivery_date">Preferred Delivery Date *</label>
+                <input type="date" id="delivery_date" name="delivery_date" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="delivery_time">Preferred Time Window</label>
+                <select id="delivery_time" name="delivery_time">
+                  <option value="">Select time window</option>
+                  <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                  <option value="afternoon">Afternoon (12:00 PM - 5:00 PM)</option>
+                  <option value="evening">Evening (5:00 PM - 8:00 PM)</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="delivery_notes">Delivery Instructions</label>
+                <textarea id="delivery_notes" name="delivery_notes" rows="3" placeholder="Special delivery instructions, gate codes, etc."></textarea>
+              </div>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn">
+            <i class="fas fa-truck"></i>
+            Schedule Delivery
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Information -->
+  <section class="stats-section">
+    <div class="container">
+      <h2 class="text-center">Pricing Information</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3><i class="fas fa-seedling"></i> Coffee Seedlings</h3>
+          <div class="pricing-item">
+            <span class="price">$2.50</span>
+            <span class="unit">per seedling</span>
+          </div>
+          <p>High-quality coffee seedlings ready for planting. Minimum order: 100 seedlings.</p>
+        </div>
+        
+        <div class="card">
+          <h3><i class="fas fa-apple-alt"></i> Fresh Produce</h3>
+          <div class="pricing-item">
+            <span class="price">$15-25</span>
+            <span class="unit">per box</span>
+          </div>
+          <p>Seasonal fresh fruits and vegetables. Prices vary by season and availability.</p>
+        </div>
+        
+        <div class="card">
+          <h3><i class="fas fa-home"></i> Farm Visits</h3>
+          <div class="pricing-item">
+            <span class="price">$25-50</span>
+            <span class="unit">per person</span>
+          </div>
+          <p>Educational farm tours and experiences. Group discounts available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Status Check -->
+  <section>
+    <div class="container">
+      <h2>Check Order Status</h2>
+      <div class="card">
+        <div class="grid grid-2">
+          <div>
+            <h3>Track Your Order</h3>
+            <p>Enter your order number to check the status of your order or booking.</p>
+            <div class="form-group">
+              <label for="order_number">Order Number</label>
+              <input type="text" id="order_number" name="order_number" placeholder="Enter your order number">
+            </div>
+            <button class="btn btn-outline" onclick="checkOrderStatus()">
+              <i class="fas fa-search"></i>
+              Check Status
+            </button>
+          </div>
+          
+          <div>
+            <h3>Need Help?</h3>
+            <p>If you have questions about your order or need assistance, we're here to help.</p>
+            <div class="contact-options">
+              <a href="tel:+1234567890" class="btn btn-outline">
+                <i class="fas fa-phone"></i>
+                Call Us
+              </a>
+              <a href="mailto:orders@osonfarm.com" class="btn btn-outline">
+                <i class="fas fa-envelope"></i>
+                Email Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Oson Farm. All rights reserved. | Fresh produce and farm experiences</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Notification Container -->
+  <div id="notification-container"></div>
+
+  <script>
+    // Product options based on order type
+    const productOptions = {
+      'coffee-seedlings': [
+        { value: 'arabica', text: 'Arabica Coffee Seedlings' },
+        { value: 'robusta', text: 'Robusta Coffee Seedlings' },
+        { value: 'mixed', text: 'Mixed Variety Pack' }
+      ],
+      'fresh-produce': [
+        { value: 'avocado', text: 'Fresh Avocados' },
+        { value: 'pineapple', text: 'Pineapples' },
+        { value: 'vegetables', text: 'Mixed Vegetables' },
+        { value: 'fruits', text: 'Mixed Fruits' }
+      ],
+      'livestock': [
+        { value: 'milk', text: 'Fresh Cow Milk' },
+        { value: 'eggs', text: 'Fresh Chicken Eggs' },
+        { value: 'chicken', text: 'Fresh Chicken' },
+        { value: 'fish', text: 'Fresh Fish' }
+      ],
+      'services': [
+        { value: 'delivery', text: 'Delivery Service' },
+        { value: 'consultation', text: 'Farming Consultation' },
+        { value: 'training', text: 'Agricultural Training' },
+        { value: 'equipment', text: 'Equipment Rental' }
+      ]
+    };
+
+    // Update product options based on order type
+    function updateProductOptions() {
+      const orderType = document.getElementById('order_type').value;
+      const productSelect = document.getElementById('product_selection');
+      
+      // Clear existing options
+      productSelect.innerHTML = '<option value="">Select a product</option>';
+      
+      if (productOptions[orderType]) {
+        productOptions[orderType].forEach(option => {
+          const optionElement = document.createElement('option');
+          optionElement.value = option.value;
+          optionElement.textContent = option.text;
+          productSelect.appendChild(optionElement);
+        });
+      }
+    }
+
+    // Show order form
+    function showOrderForm() {
+      hideAllSections();
+      document.getElementById('order-form').style.display = 'block';
+      document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Show booking form
+    function showBookingForm() {
+      hideAllSections();
+      document.getElementById('booking-form').style.display = 'block';
+      document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Show delivery form
+    function showDeliveryForm() {
+      hideAllSections();
+      document.getElementById('delivery-form').style.display = 'block';
+      document.getElementById('delivery-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Hide all form sections
+    function hideAllSections() {
+      document.querySelectorAll('.order-section').forEach(section => {
+        section.style.display = 'none';
+      });
+    }
+
+    // Form validation and submission
+    document.getElementById('product-order-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleFormSubmission('Product Order', this);
+    });
+
+    document.getElementById('visit-booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleFormSubmission('Farm Visit Booking', this);
+    });
+
+    document.getElementById('delivery-scheduling-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleFormSubmission('Delivery Scheduling', this);
+    });
+
+    // Generic form submission handler
+    function handleFormSubmission(formType, form) {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      
+      // Simple validation
+      const requiredFields = form.querySelectorAll('[required]');
+      let isValid = true;
+      
+      requiredFields.forEach(field => {
+        if (!field.value || field.value.trim() === '') {
+          field.classList.add('error');
+          isValid = false;
+        } else {
+          field.classList.remove('error');
+        }
+      });
+      
+      if (isValid) {
+        showNotification(`${formType} submitted successfully! We'll contact you within 24 hours to confirm details.`, 'success');
+        form.reset();
+        hideAllSections();
+      } else {
+        showNotification('Please fill in all required fields.', 'error');
+      }
+    }
+
+    // Check order status
+    function checkOrderStatus() {
+      const orderNumber = document.getElementById('order_number').value;
+      if (orderNumber) {
+        showNotification(`Order ${orderNumber} status: Processing. We'll contact you with updates.`, 'info');
+      } else {
+        showNotification('Please enter your order number.', 'error');
+      }
+    }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+        <span>${message}</span>
+      `;
+      
+      document.getElementById('notification-container').appendChild(notification);
+      
+      setTimeout(() => notification.classList.add('show'), 100);
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, 5000);
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections and cards
+    document.querySelectorAll('section, .card, .feature-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Set minimum date for date inputs to today
+    const today = new Date().toISOString().split('T')[0];
+    document.querySelectorAll('input[type="date"]').forEach(input => {
+      input.min = today;
+    });
+  </script>
+
+  <style>
+    /* Additional styles for order page */
+    .order-section {
+      margin: 2rem 0;
+    }
+
+    .pricing-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary-green);
+    }
+
+    .unit {
+      color: var(--text-light);
+      opacity: 0.8;
+    }
+
+    .contact-options {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .contact-options .btn {
+      flex: 1;
+      text-align: center;
+    }
+
+    .form-group.focused label {
+      color: var(--secondary-green);
+    }
+
+    .form-group.focused input,
+    .form-group.focused textarea,
+    .form-group.focused select {
+      border-color: var(--secondary-green);
+      box-shadow: 0 0 10px var(--shadow-medium);
+    }
+
+    #notification-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+    }
+
+    .notification {
+      background: var(--dark-bg);
+      border: 1px solid var(--primary-green);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .notification-success {
+      border-color: #4CAF50;
+    }
+
+    .notification-success i {
+      color: #4CAF50;
+    }
+
+    .notification-error {
+      border-color: #f44336;
+    }
+
+    .notification-error i {
+      color: #f44336;
+    }
+
+    .notification-info i {
+      color: var(--primary-green);
+    }
+
+    @media (max-width: 768px) {
+      .contact-options {
+        flex-direction: column;
+      }
+
+      .pricing-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .price {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </body>
-</html> 
+</html>

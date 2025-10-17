@@ -1,0 +1,11 @@
+
+:root { --primary-green:#7fff00; --secondary-green:#bfff00; --dark-bg:#101010; --text-light:#e0e0e0; }
+* { box-sizing: border-box; }
+body { font-family: sans-serif; margin:0; background:var(--dark-bg); color:var(--text-light); }
+nav { background: rgba(11, 61, 11, 0.95); position: sticky; top:0; z-index:1000; padding:1rem 0; }
+.mobile-menu-btn { display:none; }
+@media (max-width:768px) {
+  .mobile-menu-btn { display:flex; flex-direction:column; background:none; border:none; padding:10px; }
+  nav ul { display:none; position:absolute; top:100%; left:0; right:0; background:rgba(11,61,11,0.95); padding:1rem; flex-direction:column; }
+  nav.mobile-open ul { display:flex; }
+}

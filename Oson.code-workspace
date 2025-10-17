@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../Downloads/DairyMan-main"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Oson Farm"
+	}
+}
