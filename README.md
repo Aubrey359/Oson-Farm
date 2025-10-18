@@ -36,3 +36,7 @@ This website is deployed using GitHub Pages and can be accessed at: [Your GitHub
 ## Contact
 
 For more information about Oson Farm products and services, please use the contact form on the website.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 579a6771228a52a1382ae9494b132e2271a833ac
