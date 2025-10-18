@@ -28,7 +28,7 @@
   <section class="hero-section">
     <div class="hero-content">
       <h1 class="hero-title">Order & Booking</h1>
-      <p class="hero-subtitle">Place your order for fresh produce or book a farm visit to experience sustainable agriculture firsthand.</p>
+      <p class="hero-subtitle">Place your order for fresh produce or book your stay at Oson Farm for an authentic agricultural experience.</p>
     </div>
   </section>
 
@@ -47,15 +47,395 @@
         <div class="feature-card" onclick="showBookingForm()">
           <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
           <h3>Book a Farm Visit</h3>
-          <p>Schedule a farm tour, educational visit, or farm stay experience.</p>
+          <p>Schedule a farm tour, educational visit, or special event experience.</p>
           <button class="btn">Book Visit</button>
         </div>
         
+        <div class="feature-card" onclick="showAccommodationForm()">
+          <div class="feature-icon"><i class="fas fa-home"></i></div>
+          <h3>Book Accommodation</h3>
+          <p>Reserve our BnB rooms, cottages, or rental houses for your farm stay.</p>
+          <button class="btn">Book Stay</button>
+        </div>
+
         <div class="feature-card" onclick="showDeliveryForm()">
           <div class="feature-icon"><i class="fas fa-truck"></i></div>
           <h3>Schedule Delivery</h3>
           <p>Arrange delivery services for your orders or special requests.</p>
           <button class="btn">Schedule Delivery</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BnB & Accommodation Booking Form -->
+  <section id="accommodation-form" class="order-section" style="display: none;">
+    <div class="container">
+      <h2><i class="fas fa-bed"></i> Book Your Accommodation</h2>
+      <p class="section-subtitle">Experience authentic farm life with comfortable lodging and modern amenities</p>
+      
+      <div class="accommodation-grid">
+        <!-- Available Accommodations Display -->
+        <div class="accommodations-list">
+          <h3>Available Accommodations</h3>
+          
+          <!-- Farmhouse Suite -->
+          <div class="accommodation-card" data-accommodation="farmhouse" data-price="120">
+            <div class="accommodation-image">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Farmhouse Suite</text></svg>" alt="Farmhouse Suite">
+              <div class="accommodation-badge popular">Popular Choice</div>
+            </div>
+            <div class="accommodation-details">
+              <h4>Farmhouse Suite</h4>
+              <p class="accommodation-description">Spacious family suite with panoramic farm views</p>
+              <div class="accommodation-features">
+                <span><i class="fas fa-users"></i> 2-4 guests</span>
+                <span><i class="fas fa-bed"></i> 2 bedrooms</span>
+                <span><i class="fas fa-bath"></i> 2 bathrooms</span>
+                <span><i class="fas fa-wifi"></i> Free WiFi</span>
+              </div>
+              <div class="accommodation-amenities">
+                <span>✓ Full Kitchen</span>
+                <span>✓ Living Room</span>
+                <span>✓ Private Balcony</span>
+                <span>✓ Air Conditioning</span>
+              </div>
+              <div class="accommodation-price">$120 <small>per night</small></div>
+              <button class="btn btn-select" onclick="selectAccommodation('farmhouse', 'Farmhouse Suite', 120, 4)">Select</button>
+            </div>
+          </div>
+
+          <!-- Cozy Cottage -->
+          <div class="accommodation-card" data-accommodation="cottage" data-price="80">
+            <div class="accommodation-image">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Cozy Cottage</text></svg>" alt="Cozy Cottage">
+              <div class="accommodation-badge">Romantic</div>
+            </div>
+            <div class="accommodation-details">
+              <h4>Cozy Cottage</h4>
+              <p class="accommodation-description">Perfect for couples seeking a peaceful retreat</p>
+              <div class="accommodation-features">
+                <span><i class="fas fa-users"></i> 2 guests</span>
+                <span><i class="fas fa-bed"></i> 1 bedroom</span>
+                <span><i class="fas fa-bath"></i> 1 bathroom</span>
+                <span><i class="fas fa-wifi"></i> Free WiFi</span>
+              </div>
+              <div class="accommodation-amenities">
+                <span>✓ Kitchenette</span>
+                <span>✓ Garden View</span>
+                <span>✓ Private Patio</span>
+                <span>✓ Fireplace</span>
+              </div>
+              <div class="accommodation-price">$80 <small>per night</small></div>
+              <button class="btn btn-select" onclick="selectAccommodation('cottage', 'Cozy Cottage', 80, 2)">Select</button>
+            </div>
+          </div>
+
+          <!-- Guest House -->
+          <div class="accommodation-card" data-accommodation="guesthouse" data-price="180">
+            <div class="accommodation-image">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Guest House</text></svg>" alt="Guest House">
+              <div class="accommodation-badge family">Best for Families</div>
+            </div>
+            <div class="accommodation-details">
+              <h4>Guest House</h4>
+              <p class="accommodation-description">Large house ideal for families and groups</p>
+              <div class="accommodation-features">
+                <span><i class="fas fa-users"></i> 6-8 guests</span>
+                <span><i class="fas fa-bed"></i> 3 bedrooms</span>
+                <span><i class="fas fa-bath"></i> 2.5 bathrooms</span>
+                <span><i class="fas fa-wifi"></i> Free WiFi</span>
+              </div>
+              <div class="accommodation-amenities">
+                <span>✓ Full Kitchen</span>
+                <span>✓ Dining Room</span>
+                <span>✓ Large Deck</span>
+                <span>✓ BBQ Grill</span>
+              </div>
+              <div class="accommodation-price">$180 <small>per night</small></div>
+              <button class="btn btn-select" onclick="selectAccommodation('guesthouse', 'Guest House', 180, 8)">Select</button>
+            </div>
+          </div>
+
+          <!-- Glamping Tent -->
+          <div class="accommodation-card" data-accommodation="glamping" data-price="60">
+            <div class="accommodation-image">
+              <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Glamping Tent</text></svg>" alt="Glamping Tent">
+              <div class="accommodation-badge adventure">Adventure</div>
+            </div>
+            <div class="accommodation-details">
+              <h4>Luxury Glamping Tent</h4>
+              <p class="accommodation-description">Experience nature with comfort and style</p>
+              <div class="accommodation-features">
+                <span><i class="fas fa-users"></i> 2 guests</span>
+                <span><i class="fas fa-campground"></i> Safari tent</span>
+                <span><i class="fas fa-shower"></i> Shared facilities</span>
+                <span><i class="fas fa-fire"></i> Fire pit</span>
+              </div>
+              <div class="accommodation-amenities">
+                <span>✓ Comfortable Beds</span>
+                <span>✓ Solar Power</span>
+                <span>✓ Outdoor Seating</span>
+                <span>✓ Campfire Area</span>
+              </div>
+              <div class="accommodation-price">$60 <small>per night</small></div>
+              <button class="btn btn-select" onclick="selectAccommodation('glamping', 'Luxury Glamping Tent', 60, 2)">Select</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form-card">
+          <form id="accommodation-booking-form">
+            <h3><i class="fas fa-user-circle"></i> Guest Information</h3>
+            
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="acc_first_name">First Name *</label>
+                <input type="text" id="acc_first_name" name="first_name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="acc_last_name">Last Name *</label>
+                <input type="text" id="acc_last_name" name="last_name" required>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="acc_email">Email Address *</label>
+                <input type="email" id="acc_email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="acc_phone">Phone Number *</label>
+                <input type="tel" id="acc_phone" name="phone" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="acc_country">Country/Region *</label>
+              <select id="acc_country" name="country" required>
+                <option value="">Select your country</option>
+                <option value="Kenya">Kenya</option>
+                <option value="Uganda">Uganda</option>
+                <option value="Tanzania">Tanzania</option>
+                <option value="Rwanda">Rwanda</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="USA">United States</option>
+                <option value="UK">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <hr class="form-divider">
+            
+            <h3><i class="fas fa-calendar-check"></i> Booking Details</h3>
+            
+            <div class="form-group">
+              <label for="accommodation_type">Selected Accommodation *</label>
+              <input type="text" id="accommodation_type" name="accommodation_type" readonly required>
+              <input type="hidden" id="accommodation_id" name="accommodation_id">
+              <input type="hidden" id="accommodation_price" name="accommodation_price">
+              <input type="hidden" id="max_guests" name="max_guests">
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="check_in">Check-in Date *</label>
+                <input type="date" id="check_in" name="check_in" required onchange="calculateAccommodationTotal()">
+              </div>
+              
+              <div class="form-group">
+                <label for="check_out">Check-out Date *</label>
+                <input type="date" id="check_out" name="check_out" required onchange="calculateAccommodationTotal()">
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label for="num_adults">Number of Adults *</label>
+                <select id="num_adults" name="num_adults" required onchange="validateGuestCount()">
+                  <option value="">Select</option>
+                  <option value="1">1 Adult</option>
+                  <option value="2">2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                  <option value="5">5 Adults</option>
+                  <option value="6">6 Adults</option>
+                  <option value="7">7 Adults</option>
+                  <option value="8">8 Adults</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="num_children">Number of Children</label>
+                <select id="num_children" name="num_children" onchange="validateGuestCount()">
+                  <option value="0">No Children</option>
+                  <option value="1">1 Child</option>
+                  <option value="2">2 Children</option>
+                  <option value="3">3 Children</option>
+                  <option value="4">4 Children</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="arrival_time">Estimated Arrival Time</label>
+              <select id="arrival_time" name="arrival_time">
+                <option value="">Select time</option>
+                <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
+                <option value="afternoon">Afternoon (12:00 PM - 5:00 PM)</option>
+                <option value="evening">Evening (5:00 PM - 8:00 PM)</option>
+                <option value="late">Late Evening (After 8:00 PM)</option>
+              </select>
+            </div>
+
+            <hr class="form-divider">
+            
+            <h3><i class="fas fa-concierge-bell"></i> Additional Services</h3>
+            
+            <div class="services-selection">
+              <label class="checkbox-label">
+                <input type="checkbox" name="breakfast" value="15" onchange="calculateAccommodationTotal()">
+                <span class="checkbox-content">
+                  <strong>Breakfast Package</strong>
+                  <small>Farm-fresh breakfast daily (+$15 per person/day)</small>
+                </span>
+              </label>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="lunch" value="20" onchange="calculateAccommodationTotal()">
+                <span class="checkbox-content">
+                  <strong>Lunch Service</strong>
+                  <small>Organic farm-to-table lunch (+$20 per person/day)</small>
+                </span>
+              </label>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="dinner" value="25" onchange="calculateAccommodationTotal()">
+                <span class="checkbox-content">
+                  <strong>Dinner Service</strong>
+                  <small>Traditional homemade dinner (+$25 per person/day)</small>
+                </span>
+              </label>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="farm_tour" value="25" onchange="calculateAccommodationTotal()">
+                <span class="checkbox-content">
+                  <strong>Guided Farm Tour</strong>
+                  <small>Educational 2-hour tour (+$25 per person, one-time)</small>
+                </span>
+              </label>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="activities" value="30" onchange="calculateAccommodationTotal()">
+                <span class="checkbox-content">
+                  <strong>Farm Activities Package</strong>
+                  <small>Hands-on farming experience (+$30 per person/day)</small>
+                </span>
+              </label>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="airport_pickup" value="50" onchange="calculateAccommodationTotal()">
+                <span class="checkbox-content">
+                  <strong>Airport Pickup</strong>
+                  <small>One-way airport transfer (+$50, one-time)</small>
+                </span>
+              </label>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="airport_dropoff" value="50" onchange="calculateAccommodationTotal()">
+                <span class="checkbox-content">
+                  <strong>Airport Drop-off</strong>
+                  <small>One-way airport transfer (+$50, one-time)</small>
+                </span>
+              </label>
+
+              <label class="checkbox-label">
+                <input type="checkbox" name="laundry" value="10" onchange="calculateAccommodationTotal()">
+                <span class="checkbox-content">
+                  <strong>Laundry Service</strong>
+                  <small>Full laundry service (+$10 per day)</small>
+                </span>
+              </label>
+            </div>
+
+            <hr class="form-divider">
+            
+            <h3><i class="fas fa-clipboard-list"></i> Special Requests</h3>
+            
+            <div class="form-group">
+              <label for="dietary_restrictions">Dietary Restrictions or Allergies</label>
+              <textarea id="dietary_restrictions" name="dietary_restrictions" rows="2" placeholder="Please inform us of any dietary restrictions, food allergies, or preferences"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="special_requests">Special Requests or Comments</label>
+              <textarea id="special_requests" name="special_requests" rows="3" placeholder="Any special requests, accessibility needs, or additional information we should know"></textarea>
+            </div>
+
+            <!-- Booking Summary -->
+            <div class="booking-summary">
+              <h3><i class="fas fa-receipt"></i> Booking Summary</h3>
+              <div class="summary-content">
+                <div class="summary-row">
+                  <span>Accommodation:</span>
+                  <span id="summary_accommodation">Not selected</span>
+                </div>
+                <div class="summary-row">
+                  <span>Check-in:</span>
+                  <span id="summary_checkin">-</span>
+                </div>
+                <div class="summary-row">
+                  <span>Check-out:</span>
+                  <span id="summary_checkout">-</span>
+                </div>
+                <div class="summary-row">
+                  <span>Number of nights:</span>
+                  <span id="summary_nights">0</span>
+                </div>
+                <div class="summary-row">
+                  <span>Guests:</span>
+                  <span id="summary_guests">0 adults, 0 children</span>
+                </div>
+                <hr>
+                <div class="summary-row">
+                  <span>Accommodation cost:</span>
+                  <span id="summary_accommodation_cost">$0.00</span>
+                </div>
+                <div class="summary-row">
+                  <span>Additional services:</span>
+                  <span id="summary_services_cost">$0.00</span>
+                </div>
+                <div class="summary-row">
+                  <span>Subtotal:</span>
+                  <span id="summary_subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                  <span>Tax (16%):</span>
+                  <span id="summary_tax">$0.00</span>
+                </div>
+                <hr>
+                <div class="summary-row summary-total">
+                  <span>Total Amount:</span>
+                  <span id="summary_total">$0.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-check-circle"></i>
+                Confirm Booking
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="resetAccommodationForm()">
+                <i class="fas fa-redo"></i>
+                Reset Form
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -152,7 +532,6 @@
                   <option value="">Select visit type</option>
                   <option value="farm-tour">Farm Tour (1-2 hours)</option>
                   <option value="educational">Educational Visit (3-4 hours)</option>
-                  <option value="farm-stay">Farm Stay (Overnight)</option>
                   <option value="group-visit">Group Visit (5+ people)</option>
                   <option value="private-tour">Private Tour</option>
                 </select>
@@ -303,7 +682,16 @@
   <section class="stats-section">
     <div class="container">
       <h2 class="text-center">Pricing Information</h2>
-      <div class="grid grid-3">
+      <div class="grid grid-4">
+        <div class="card">
+          <h3><i class="fas fa-home"></i> Accommodation</h3>
+          <div class="pricing-item">
+            <span class="price">$60-180</span>
+            <span class="unit">per night</span>
+          </div>
+          <p>Comfortable lodging options from glamping to full houses.</p>
+        </div>
+
         <div class="card">
           <h3><i class="fas fa-seedling"></i> Coffee Seedlings</h3>
           <div class="pricing-item">
@@ -323,7 +711,7 @@
         </div>
         
         <div class="card">
-          <h3><i class="fas fa-home"></i> Farm Visits</h3>
+          <h3><i class="fas fa-map-marked-alt"></i> Farm Visits</h3>
           <div class="pricing-item">
             <span class="price">$25-50</span>
             <span class="unit">per person</span>
@@ -415,12 +803,16 @@
       ]
     };
 
+    // Accommodation booking variables
+    let selectedAccommodation = null;
+    let accommodationPrice = 0;
+    let maxGuests = 0;
+
     // Update product options based on order type
     function updateProductOptions() {
       const orderType = document.getElementById('order_type').value;
       const productSelect = document.getElementById('product_selection');
       
-      // Clear existing options
       productSelect.innerHTML = '<option value="">Select a product</option>';
       
       if (productOptions[orderType]) {
@@ -433,35 +825,199 @@
       }
     }
 
-    // Show order form
+    // Select accommodation
+    function selectAccommodation(id, name, price, guests) {
+      // Remove previous selection
+      document.querySelectorAll('.accommodation-card').forEach(card => {
+        card.classList.remove('selected');
+      });
+      
+      // Mark as selected
+      document.querySelector(`[data-accommodation="${id}"]`).classList.add('selected');
+      
+      // Update form fields
+      selectedAccommodation = id;
+      accommodationPrice = price;
+      maxGuests = guests;
+      
+      document.getElementById('accommodation_type').value = name;
+      document.getElementById('accommodation_id').value = id;
+      document.getElementById('accommodation_price').value = price;
+      document.getElementById('max_guests').value = guests;
+      document.getElementById('summary_accommodation').textContent = name;
+      
+      calculateAccommodationTotal();
+      
+      // Scroll to form
+      document.querySelector('.booking-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Validate guest count
+    function validateGuestCount() {
+      const adults = parseInt(document.getElementById('num_adults').value) || 0;
+      const children = parseInt(document.getElementById('num_children').value) || 0;
+      const totalGuests = adults + children;
+      
+      if (maxGuests > 0 && totalGuests > maxGuests) {
+        showNotification(`This accommodation can only accommodate up to ${maxGuests} guests.`, 'error');
+        return false;
+      }
+      
+      document.getElementById('summary_guests').textContent = `${adults} adults, ${children} children`;
+      calculateAccommodationTotal();
+      return true;
+    }
+
+    // Calculate accommodation total
+    function calculateAccommodationTotal() {
+      if (!selectedAccommodation) {
+        return;
+      }
+
+      const checkIn = document.getElementById('check_in').value;
+      const checkOut = document.getElementById('check_out').value;
+      
+      if (!checkIn || !checkOut) {
+        return;
+      }
+
+      // Calculate number of nights
+      const checkInDate = new Date(checkIn);
+      const checkOutDate = new Date(checkOut);
+      const timeDiff = checkOutDate - checkInDate;
+      const nights = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+      if (nights <= 0) {
+        showNotification('Check-out date must be after check-in date.', 'error');
+        return;
+      }
+
+      // Update summary
+      document.getElementById('summary_checkin').textContent = checkInDate.toLocaleDateString();
+      document.getElementById('summary_checkout').textContent = checkOutDate.toLocaleDateString();
+      document.getElementById('summary_nights').textContent = nights;
+
+      // Calculate accommodation cost
+      const accommodationCost = accommodationPrice * nights;
+      document.getElementById('summary_accommodation_cost').textContent = `${accommodationCost.toFixed(2)}`;
+
+      // Calculate additional services
+      const adults = parseInt(document.getElementById('num_adults').value) || 0;
+      const children = parseInt(document.getElementById('num_children').value) || 0;
+      const totalGuests = adults + children;
+
+      let servicesCost = 0;
+      
+      // Daily services (per person per day)
+      const dailyServices = ['breakfast', 'lunch', 'dinner', 'activities'];
+      dailyServices.forEach(service => {
+        const checkbox = document.querySelector(`input[name="${service}"]`);
+        if (checkbox && checkbox.checked) {
+          servicesCost += parseFloat(checkbox.value) * totalGuests * nights;
+        }
+      });
+
+      // One-time services
+      const oneTimeServices = ['farm_tour', 'airport_pickup', 'airport_dropoff'];
+      oneTimeServices.forEach(service => {
+        const checkbox = document.querySelector(`input[name="${service}"]`);
+        if (checkbox && checkbox.checked) {
+          const value = parseFloat(checkbox.value);
+          servicesCost += service === 'farm_tour' ? value * totalGuests : value;
+        }
+      });
+
+      // Laundry service (per day, not per person)
+      const laundry = document.querySelector('input[name="laundry"]');
+      if (laundry && laundry.checked) {
+        servicesCost += parseFloat(laundry.value) * nights;
+      }
+
+      document.getElementById('summary_services_cost').textContent = `${servicesCost.toFixed(2)}`;
+
+      // Calculate subtotal
+      const subtotal = accommodationCost + servicesCost;
+      document.getElementById('summary_subtotal').textContent = `${subtotal.toFixed(2)}`;
+
+      // Calculate tax (16%)
+      const tax = subtotal * 0.16;
+      document.getElementById('summary_tax').textContent = `${tax.toFixed(2)}`;
+
+      // Calculate total
+      const total = subtotal + tax;
+      document.getElementById('summary_total').textContent = `${total.toFixed(2)}`;
+    }
+
+    // Reset accommodation form
+    function resetAccommodationForm() {
+      document.getElementById('accommodation-booking-form').reset();
+      selectedAccommodation = null;
+      accommodationPrice = 0;
+      maxGuests = 0;
+      
+      document.querySelectorAll('.accommodation-card').forEach(card => {
+        card.classList.remove('selected');
+      });
+      
+      document.getElementById('summary_accommodation').textContent = 'Not selected';
+      document.getElementById('summary_checkin').textContent = '-';
+      document.getElementById('summary_checkout').textContent = '-';
+      document.getElementById('summary_nights').textContent = '0';
+      document.getElementById('summary_guests').textContent = '0 adults, 0 children';
+      document.getElementById('summary_accommodation_cost').textContent = '$0.00';
+      document.getElementById('summary_services_cost').textContent = '$0.00';
+      document.getElementById('summary_subtotal').textContent = '$0.00';
+      document.getElementById('summary_tax').textContent = '$0.00';
+      document.getElementById('summary_total').textContent = '$0.00';
+    }
+
+    // Show forms
     function showOrderForm() {
       hideAllSections();
       document.getElementById('order-form').style.display = 'block';
       document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Show booking form
     function showBookingForm() {
       hideAllSections();
       document.getElementById('booking-form').style.display = 'block';
       document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Show delivery form
+    function showAccommodationForm() {
+      hideAllSections();
+      document.getElementById('accommodation-form').style.display = 'block';
+      document.getElementById('accommodation-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
     function showDeliveryForm() {
       hideAllSections();
       document.getElementById('delivery-form').style.display = 'block';
       document.getElementById('delivery-form').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Hide all form sections
     function hideAllSections() {
       document.querySelectorAll('.order-section').forEach(section => {
         section.style.display = 'none';
       });
     }
 
-    // Form validation and submission
+    // Form submissions
+    document.getElementById('accommodation-booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      if (!selectedAccommodation) {
+        showNotification('Please select an accommodation first.', 'error');
+        return;
+      }
+      
+      if (!validateGuestCount()) {
+        return;
+      }
+      
+      handleFormSubmission('Accommodation Booking', this);
+    });
+
     document.getElementById('product-order-form').addEventListener('submit', function(e) {
       e.preventDefault();
       handleFormSubmission('Product Order', this);
@@ -477,12 +1033,10 @@
       handleFormSubmission('Delivery Scheduling', this);
     });
 
-    // Generic form submission handler
     function handleFormSubmission(formType, form) {
       const formData = new FormData(form);
       const data = Object.fromEntries(formData);
       
-      // Simple validation
       const requiredFields = form.querySelectorAll('[required]');
       let isValid = true;
       
@@ -496,15 +1050,20 @@
       });
       
       if (isValid) {
-        showNotification(`${formType} submitted successfully! We'll contact you within 24 hours to confirm details.`, 'success');
+        // Generate order number
+        const orderNumber = 'OSF-' + Date.now();
+        showNotification(`${formType} submitted successfully! Your booking reference is: ${orderNumber}. We'll contact you within 24 hours to confirm details.`, 'success');
         form.reset();
+        if (formType === 'Accommodation Booking') {
+          resetAccommodationForm();
+        }
         hideAllSections();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
         showNotification('Please fill in all required fields.', 'error');
       }
     }
 
-    // Check order status
     function checkOrderStatus() {
       const orderNumber = document.getElementById('order_number').value;
       if (orderNumber) {
@@ -514,7 +1073,6 @@
       }
     }
 
-    // Notification system
     function showNotification(message, type = 'info') {
       const notification = document.createElement('div');
       notification.className = `notification notification-${type}`;
@@ -529,22 +1087,8 @@
       setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => notification.remove(), 300);
-      }, 5000);
+      }, 7000);
     }
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
 
     // Back to top button
     const backToTop = document.getElementById('backToTop');
@@ -557,40 +1101,320 @@
     });
 
     backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Animate elements on scroll
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-in');
-        }
-      });
-    }, observerOptions);
-
-    // Observe all sections and cards
-    document.querySelectorAll('section, .card, .feature-card').forEach(el => {
-      observer.observe(el);
-    });
-
-    // Set minimum date for date inputs to today
+    // Set minimum date to today
     const today = new Date().toISOString().split('T')[0];
     document.querySelectorAll('input[type="date"]').forEach(input => {
       input.min = today;
     });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add animation observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('section, .card, .feature-card, .accommodation-card').forEach(el => {
+        observer.observe(el);
+      });
+    });
   </script>
 
   <style>
-    /* Additional styles for order page */
+    /* Accommodation Booking Styles */
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .accommodation-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .accommodations-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .accommodations-list h3 {
+      color: var(--primary-green);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .accommodation-card {
+      background: linear-gradient(135deg, #1e2e1e 0%, #1a4d1a 100%);
+      border: 2px solid rgba(127, 255, 0, 0.3);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 1.5rem;
+    }
+
+    .accommodation-card:hover,
+    .accommodation-card.selected {
+      border-color: var(--primary-green);
+      box-shadow: 0 10px 30px rgba(127, 255, 0, 0.3);
+      transform: translateX(5px);
+    }
+
+    .accommodation-image {
+      position: relative;
+      height: 100%;
+      min-height: 200px;
+    }
+
+    .accommodation-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .accommodation-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      background: var(--primary-green);
+      color: var(--text-dark);
+    }
+
+    .accommodation-badge.popular {
+      background: #ffd700;
+      color: #000;
+    }
+
+    .accommodation-badge.family {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .accommodation-badge.adventure {
+      background: #FF6B35;
+      color: white;
+    }
+
+    .accommodation-details {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .accommodation-details h4 {
+      color: var(--primary-green);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .accommodation-description {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .accommodation-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .accommodation-features span {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .accommodation-features i {
+      color: var(--primary-green);
+      margin-right: 0.3rem;
+    }
+
+    .accommodation-amenities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .accommodation-amenities span {
+      background: rgba(127, 255, 0, 0.2);
+      padding: 0.3rem 0.6rem;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      color: var(--primary-green);
+    }
+
+    .accommodation-price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--primary-green);
+      margin-bottom: 1rem;
+    }
+
+    .accommodation-price small {
+      font-size: 1rem;
+      font-weight: normal;
+      opacity: 0.8;
+    }
+
+    .btn-select {
+      width: 100%;
+    }
+
+    .booking-form-card {
+      background: linear-gradient(135deg, #1e2e1e 0%, #1a4d1a 100%);
+      border: 2px solid rgba(127, 255, 0, 0.3);
+      border-radius: 15px;
+      padding: 2rem;
+      position: sticky;
+      top: 100px;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+    }
+
+    .booking-form-card h3 {
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .form-divider {
+      border: none;
+      border-top: 1px solid rgba(127, 255, 0, 0.3);
+      margin: 2rem 0;
+    }
+
+    .services-selection {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .checkbox-label:hover {
+      background: rgba(127, 255, 0, 0.1);
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      margin-top: 0.2rem;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .checkbox-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .checkbox-content strong {
+      color: var(--primary-green);
+    }
+
+    .checkbox-content small {
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    .booking-summary {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--primary-green);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .booking-summary h3 {
+      color: var(--primary-green);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .summary-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .summary-row.summary-total {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary-green);
+      margin-top: 0.5rem;
+    }
+
+    .summary-content hr {
+      border: none;
+      border-top: 1px solid rgba(127, 255, 0, 0.3);
+      margin: 0.5rem 0;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-actions .btn {
+      flex: 1;
+    }
+
+    .btn-primary {
+      background: var(--primary-green);
+      color: var(--text-dark);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--primary-green);
+      color: var(--primary-green);
+    }
+
+    /* Additional Order Page Styles */
     .order-section {
       margin: 2rem 0;
     }
@@ -624,38 +1448,27 @@
       text-align: center;
     }
 
-    .form-group.focused label {
-      color: var(--secondary-green);
-    }
-
-    .form-group.focused input,
-    .form-group.focused textarea,
-    .form-group.focused select {
-      border-color: var(--secondary-green);
-      box-shadow: 0 0 10px var(--shadow-medium);
-    }
-
     #notification-container {
       position: fixed;
       top: 20px;
       right: 20px;
       z-index: 10000;
+      max-width: 450px;
     }
 
     .notification {
       background: var(--dark-bg);
       border: 1px solid var(--primary-green);
       border-radius: 8px;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       margin-bottom: 1rem;
       color: var(--text-light);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      transform: translateX(100%);
+      gap: 1rem;
+      transform: translateX(120%);
       transition: transform 0.3s ease;
-      max-width: 400px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     .notification.show {
@@ -682,18 +1495,52 @@
       color: var(--primary-green);
     }
 
+    .notification i {
+      font-size: 1.5rem;
+    }
+
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error {
+      border-color: #f44336;
+    }
+
+    @media (max-width: 1200px) {
+      .accommodation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-form-card {
+        position: static;
+        max-height: none;
+      }
+    }
+
     @media (max-width: 768px) {
+      .accommodation-card {
+        grid-template-columns: 1fr;
+      }
+
+      .accommodation-image {
+        min-height: 200px;
+      }
+
       .contact-options {
         flex-direction: column;
       }
 
-      .pricing-item {
+      .form-actions {
         flex-direction: column;
-        align-items: flex-start;
       }
 
-      .price {
-        font-size: 1.5rem;
+      .accommodation-features {
+        grid-template-columns: 1fr;
+      }
+
+      #notification-container {
+        left: 10px;
+        right: 10px;
+        max-width: none;
       }
     }
   </style>

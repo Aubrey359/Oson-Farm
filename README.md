@@ -35,4 +35,4 @@ This website is deployed using GitHub Pages and can be accessed at: [Your GitHub
 
 ## Contact
 
-For more information about Oson Farm products and services, please use the contact form 0757020981
+For more information about Oson Farm products and services, please use the contact form on the website.
