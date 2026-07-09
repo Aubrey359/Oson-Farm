@@ -1,42 +1,58 @@
-# Oson Farm Website
+# Oson Farm — Dairy Farm Management Platform
 
-A professional business website for Oson Farm, showcasing agricultural products and services including:
-
-- Coffee seedlings (with delivery)
-- Avocado fruits (with delivery)
-- Pineapples
-- Hay and silage
-- Fish
-- Chicken (live or slaughtered)
-- Cow milk production data
-- Rental houses/BnB
-- Car delivery services
+A web app that helps dairy farmers manage their operations: milk production tracking with charts, animal profiles, vaccination and medication records, feed consumption, and expense tracking.
 
 ## Features
 
-- Responsive design
-- Order/booking forms
-- Customer testimonials
-- Photo gallery
-- FAQ section
-- Newsletter signup
-- Contact information with map
-- Social media links
+- **Farmer accounts** — register/login with securely hashed passwords (bcrypt)
+- **Dashboard** — per-animal daily milk production charts (Chart.js)
+- **Animal profiles** — register animals, view herd with production share chart
+- **Milk production** — record morning/evening milking sessions per animal
+- **Expenses** — categorized expense tracking with running total
+- **Vaccination records** — with next-due-date tracking
+- **Medication records** — treatments, doses, veterinarian details
+- **Feed consumption** — feed type, quantity, and cost per animal
+- **Farmer profile & settings** — edit farm details, change password
 
-## Technologies Used
+## Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript (for form interactions)
+- Node.js + Express 5
+- EJS templates
+- SQLite (better-sqlite3) — zero-config, auto-creates and seeds the database on first run
+- express-session for auth sessions
 
-## Deployment
+## Run Locally
 
-This website is deployed using GitHub Pages and can be accessed at: [Your GitHub Pages URL will appear here]
+```bash
+npm install
+npm start
+```
 
-## Contact
+Then open http://localhost:3000.
 
-For more information about Oson Farm products and services, please use the contact form on the website.
-<<<<<<< HEAD
-=======
+On first run the database is created at `data/oson_farm.db` and seeded with demo data.
 
->>>>>>> 579a6771228a52a1382ae9494b132e2271a833ac
+**Demo login:** `john@example.com` / `demo1234` (or `mary@example.com` / `demo1234`)
+
+## Deploy to Render (free)
+
+This repo includes a `render.yaml` blueprint:
+
+1. Go to [dashboard.render.com](https://dashboard.render.com) → **New** → **Blueprint**.
+2. Connect the `Aubrey359/Oson-Farm` repository (branch: `trunk`).
+3. Click **Apply** — Render builds and deploys automatically. `SESSION_SECRET` is generated for you.
+
+> **Note on data persistence:** the free tier has an ephemeral disk, so the SQLite database resets to seed data on every deploy/restart. For persistent data, add a Render Disk (paid) mounted at `/var/data` and set the env var `DB_PATH=/var/data/oson_farm.db`.
+
+## Configuration (environment variables)
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `PORT` | `3000` | HTTP port |
+| `SESSION_SECRET` | dev fallback | Session cookie signing secret — set in production |
+| `DB_PATH` | `./data/oson_farm.db` | SQLite database file location |
+
+## Project Notes
+
+- `db.sql` is the original MySQL schema, kept for reference; the live schema is created automatically by `db.js`.
+- The static HTML pages at the repo root (`about.html`, `products.html`, etc.) are an earlier standalone marketing site and are not served by the app.

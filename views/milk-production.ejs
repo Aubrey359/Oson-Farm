@@ -33,10 +33,11 @@
                     <tr>
                         <td><%= prod.animal_tag %></td>
                         <td><%= prod.animal_name %></td>
-                        <td><%= prod.production_date.toLocaleDateString() %></td>
-                        <% const hour = Number(prod.production_time.split(":")[0])  %>
+                        <td><%= new Date(prod.production_date).toLocaleDateString() %></td>
+                        <% const hour = Number(String(prod.production_time).split(":")[0])  %>
                         <td><%= hour < 12 ? "Morning" : hour < 16 ? "Afternoon": "Evening" %></td>
                         <td><%= prod.quantity %> L</td>
+                    </tr>
                     <% }) %>
                 </tbody>        
         </section>
