@@ -52,7 +52,22 @@ This repo includes a `render.yaml` blueprint:
 | `SESSION_SECRET` | dev fallback | Session cookie signing secret — set in production |
 | `DB_PATH` | `./data/oson_farm.db` | SQLite database file location |
 
-## Project Notes
+## Project Structure
 
-- `db.sql` is the original MySQL schema, kept for reference; the live schema is created automatically by `db.js`.
-- The static HTML pages at the repo root (`about.html`, `products.html`, etc.) are an earlier standalone marketing site and are not served by the app.
+```
+server.js              App entry point: Express setup, middleware, route mounting
+db/
+  index.js             SQLite connection + schema (auto-created on first run)
+  seed.js              Demo data inserted into a brand-new database
+  queries.js           Shared SQL statements (all parameterized)
+  mysql-schema.sql     Original MySQL schema, kept for reference only
+routes/
+  auth.js              Register, login, logout
+  farm.js              Dashboard, animal profiles, milk production
+  records.js           Expenses, vaccination, medication, feed consumption
+  account.js           Farmer profile, settings (password change)
+lib/
+  utils.js             Helpers that shape data for the Chart.js views
+views/                 EJS page templates (partials start with _)
+public/                Stylesheets and client-side JS served statically
+```
