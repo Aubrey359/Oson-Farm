@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter - Oson Farm</title>
+  <link rel="stylesheet" href="../oson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="products.html">Products & Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="order.html">Order/Booking</a></li>
+      <li><a href="production.html">Production Data</a></li>
+      <li><a href="newsletter.html" class="active">Newsletter</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Oson Farm Newsletter</h1>
+      <p class="hero-subtitle">Stay connected with our farm community. Get the latest updates on sustainable agriculture, seasonal products, and farm life.</p>
+    </div>
+  </section>
+
+  <!-- Newsletter Benefits -->
+  <section>
+    <div class="container">
+      <h2 class="text-center">Why Subscribe to Our Newsletter?</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Seasonal Updates</h3>
+          <p>Get notified about seasonal produce availability, new products, and special offers throughout the year.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+          <h3>Farming Tips</h3>
+          <p>Learn sustainable farming practices, gardening tips, and agricultural insights from our expert team.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-percent"></i></div>
+          <h3>Exclusive Offers</h3>
+          <p>Receive subscriber-only discounts, early access to new products, and special promotions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-heart"></i></div>
+          <h3>Community Stories</h3>
+          <p>Read inspiring stories from our farming community and learn about our impact on local families.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription Form -->
+  <section id="newsletter">
+    <div class="container">
+      <div class="card">
+        <h2><i class="fas fa-envelope"></i> Subscribe to Our Newsletter</h2>
+        <p>Join over 2,500 subscribers who receive our weekly farm updates and exclusive content.</p>
+        
+        <form id="newsletter-form" class="newsletter-form">
+          <div class="grid grid-2">
+            <div>
+              <h3>Personal Information</h3>
+              <div class="form-group">
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="newsletter-email">Email Address *</label>
+                <input type="email" id="newsletter-email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Optional">
+              </div>
+            </div>
+            
+            <div>
+              <h3>Newsletter Preferences</h3>
+              <div class="form-group">
+                <label for="frequency">Email Frequency *</label>
+                <select id="frequency" name="frequency" required>
+                  <option value="">Select frequency</option>
+                  <option value="weekly">Weekly (Recommended)</option>
+                  <option value="bi-weekly">Bi-weekly</option>
+                  <option value="monthly">Monthly</option>
+                  <option value="seasonal">Seasonal Only</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label>Content Interests *</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="products">
+                    <span class="checkmark"></span>
+                    Product Updates & Availability
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="farming">
+                    <span class="checkmark"></span>
+                    Farming Tips & Techniques
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="offers">
+                    <span class="checkmark"></span>
+                    Special Offers & Discounts
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="events">
+                    <span class="checkmark"></span>
+                    Farm Events & Tours
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="sustainability">
+                    <span class="checkmark"></span>
+                    Sustainability & Environment
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="community">
+                    <span class="checkmark"></span>
+                    Community Stories
+                  </label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="City, State (Optional)">
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="terms" name="terms" required>
+              <span class="checkmark"></span>
+              I agree to receive newsletters and promotional emails from Oson Farm. I can unsubscribe at any time.
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="privacy" name="privacy" required>
+              <span class="checkmark"></span>
+              I have read and agree to the <a href="#" onclick="showPrivacyPolicy()">Privacy Policy</a> and <a href="#" onclick="showTermsOfService()">Terms of Service</a>.
+            </label>
+          </div>
+          
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane"></i>
+            Subscribe to Newsletter
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Archive -->
+  <section>
+    <div class="container">
+      <h2>Recent Newsletter Issues</h2>
+      <div class="newsletter-archive">
+        <div class="newsletter-item">
+          <div class="newsletter-date">
+            <span class="month">Dec</span>
+            <span class="day">15</span>
+            <span class="year">2024</span>
+          </div>
+          <div class="newsletter-content">
+            <h3>Winter Harvest Special & Holiday Offers</h3>
+            <p>Discover our winter produce collection, holiday special offers, and learn about our sustainable farming practices during the colder months.</p>
+            <div class="newsletter-tags">
+              <span class="tag">Seasonal Produce</span>
+              <span class="tag">Holiday Offers</span>
+              <span class="tag">Winter Farming</span>
+            </div>
+            <a href="#" class="btn btn-outline" onclick="viewNewsletter('winter-2024')">
+              <i class="fas fa-eye"></i>
+              View Newsletter
+            </a>
+          </div>
+        </div>
+        
+        <div class="newsletter-item">
+          <div class="newsletter-date">
+            <span class="month">Dec</span>
+            <span class="day">01</span>
+            <span class="year">2024</span>
+          </div>
+          <div class="newsletter-content">
+            <h3>New Coffee Seedlings Available & Farm Tour Updates</h3>
+            <p>Our latest batch of premium coffee seedlings is ready! Plus, learn about our new farm tour experiences and educational programs.</p>
+            <div class="newsletter-tags">
+              <span class="tag">Coffee Seedlings</span>
+              <span class="tag">Farm Tours</span>
+              <span class="tag">Education</span>
+            </div>
+            <a href="#" class="btn btn-outline" onclick="viewNewsletter('coffee-2024')">
+              <i class="fas fa-eye"></i>
+              View Newsletter
+            </a>
+          </div>
+        </div>
+        
+        <div class="newsletter-item">
+          <div class="newsletter-date">
+            <span class="month">Nov</span>
+            <span class="day">15</span>
+            <span class="year">2024</span>
+          </div>
+          <div class="newsletter-content">
+            <h3>Sustainability Report & Community Impact</h3>
+            <p>Read our annual sustainability report, learn about our environmental initiatives, and discover how we're supporting local communities.</p>
+            <div class="newsletter-tags">
+              <span class="tag">Sustainability</span>
+              <span class="tag">Community Impact</span>
+              <span class="tag">Annual Report</span>
+            </div>
+            <a href="#" class="btn btn-outline" onclick="viewNewsletter('sustainability-2024')">
+              <i class="fas fa-eye"></i>
+              View Newsletter
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscription Management -->
+  <section class="stats-section">
+    <div class="container">
+      <h2 class="text-center">Manage Your Subscription</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3><i class="fas fa-cog"></i> Update Preferences</h3>
+          <p>Change your email frequency, content interests, or personal information.</p>
+          <button class="btn btn-outline" onclick="updatePreferences()">
+            <i class="fas fa-edit"></i>
+            Update Settings
+          </button>
+        </div>
+        
+        <div class="card">
+          <h3><i class="fas fa-pause"></i> Pause Subscription</h3>
+          <p>Temporarily pause your newsletter delivery without losing your subscription.</p>
+          <button class="btn btn-outline" onclick="pauseSubscription()">
+            <i class="fas fa-pause"></i>
+            Pause Delivery
+          </button>
+        </div>
+        
+        <div class="card">
+          <h3><i class="fas fa-sign-out-alt"></i> Unsubscribe</h3>
+          <p>We're sorry to see you go! You can unsubscribe at any time with one click.</p>
+          <button class="btn btn-outline" onclick="unsubscribe()">
+            <i class="fas fa-times"></i>
+            Unsubscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Statistics -->
+  <section>
+    <div class="container">
+      <h2 class="text-center">Newsletter Impact</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number counter" data-target="2500">0</span>
+          <span class="stat-label">Active Subscribers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number counter" data-target="95">0</span>
+          <span class="stat-label">% Open Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number counter" data-target="12">0</span>
+          <span class="stat-label">Newsletters per Year</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number counter" data-target="48">0</span>
+          <span class="stat-label">Countries Reached</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Oson Farm. All rights reserved. | Stay connected with our farming community</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Notification Container -->
+  <div id="notification-container"></div>
+
+  <!-- Privacy Policy Modal -->
+  <div id="privacy-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('privacy-modal')">&times;</span>
+      <h2>Privacy Policy</h2>
+      <p>At Oson Farm, we respect your privacy and are committed to protecting your personal information. We only collect the information necessary to provide you with our newsletter and farm updates.</p>
+      <p>We will never sell, trade, or share your personal information with third parties without your consent. You can unsubscribe from our newsletter at any time by clicking the unsubscribe link in any email or by contacting us directly.</p>
+      <p>For more information about how we handle your data, please contact us at privacy@osonfarm.com</p>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div id="terms-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('terms-modal')">&times;</span>
+      <h2>Terms of Service</h2>
+      <p>By subscribing to our newsletter, you agree to receive periodic emails from Oson Farm containing farm updates, product information, and promotional content.</p>
+      <p>You can unsubscribe at any time, and we will remove your information from our mailing list within 48 hours of your request.</p>
+      <p>We reserve the right to modify these terms at any time. Continued subscription after changes constitutes acceptance of the new terms.</p>
+    </div>
+  </div>
+
+  <script>
+    // Newsletter form submission
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      // Validate required fields
+      const requiredFields = ['first_name', 'last_name', 'email', 'frequency', 'terms', 'privacy'];
+      let isValid = true;
+      
+      requiredFields.forEach(field => {
+        if (!data[field]) {
+          document.getElementById(field.replace('_', '-')).classList.add('error');
+          isValid = false;
+        } else {
+          document.getElementById(field.replace('_', '-')).classList.remove('error');
+        }
+      });
+      
+      // Check if at least one interest is selected
+      const interests = formData.getAll('interests');
+      if (interests.length === 0) {
+        showNotification('Please select at least one content interest.', 'error');
+        isValid = false;
+      }
+      
+      if (isValid) {
+        // Simulate subscription process
+        showNotification('Thank you for subscribing! Welcome to the Oson Farm community.', 'success');
+        this.reset();
+        
+        // Update subscriber count
+        setTimeout(() => {
+          const counter = document.querySelector('.stat-number[data-target="2500"]');
+          const newTarget = parseInt(counter.getAttribute('data-target')) + 1;
+          counter.setAttribute('data-target', newTarget);
+          animateCounter(counter);
+        }, 2000);
+      } else {
+        showNotification('Please fill in all required fields and select your interests.', 'error');
+      }
+    });
+
+    // Counter animation
+    function animateCounter(counter) {
+      const target = parseInt(counter.getAttribute('data-target'));
+      const current = parseInt(counter.innerText);
+      const increment = (target - current) / 20;
+      
+      if (current < target) {
+        counter.innerText = Math.ceil(current + increment);
+        setTimeout(() => animateCounter(counter), 50);
+      } else {
+        counter.innerText = target;
+      }
+    }
+
+    // Initialize counters on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        animateCounter(counter);
+      });
+    });
+
+    // Newsletter management functions
+    function updatePreferences() {
+      showNotification('Opening preferences editor...', 'info');
+      // This would open a modal or redirect to preferences page
+    }
+
+    function pauseSubscription() {
+      if (confirm('Are you sure you want to pause your newsletter subscription?')) {
+        showNotification('Newsletter delivery paused. You can resume anytime.', 'success');
+      }
+    }
+
+    function unsubscribe() {
+      if (confirm('Are you sure you want to unsubscribe from our newsletter? You can resubscribe anytime.')) {
+        showNotification('You have been unsubscribed. We\'re sorry to see you go!', 'info');
+      }
+    }
+
+    function viewNewsletter(issue) {
+      showNotification(`Opening newsletter: ${issue}`, 'info');
+      // This would open the newsletter in a new window or modal
+    }
+
+    // Modal functions
+    function showPrivacyPolicy() {
+      document.getElementById('privacy-modal').style.display = 'block';
+    }
+
+    function showTermsOfService() {
+      document.getElementById('terms-modal').style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Close modals when clicking outside
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+        <span>${message}</span>
+      `;
+      
+      document.getElementById('notification-container').appendChild(notification);
+      
+      setTimeout(() => notification.classList.add('show'), 100);
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, 4000);
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections and cards
+    document.querySelectorAll('section, .card, .newsletter-item').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+  <style>
+    /* Additional styles for newsletter page */
+    .newsletter-form {
+      max-width: 100%;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      margin-right: 0.5rem;
+      transform: scale(1.2);
+    }
+
+    .newsletter-archive {
+      margin: 2rem 0;
+    }
+
+    .newsletter-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #1e2e1e 0%, #1a4d1a 100%);
+      border-radius: 15px;
+      border: 1px solid var(--primary-green);
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px var(--shadow-medium);
+    }
+
+    .newsletter-date {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+      text-align: center;
+    }
+
+    .newsletter-date .month {
+      font-size: 0.9rem;
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+
+    .newsletter-date .day {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--text-light);
+      line-height: 1;
+    }
+
+    .newsletter-date .year {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      opacity: 0.7;
+    }
+
+    .newsletter-content {
+      flex: 1;
+    }
+
+    .newsletter-content h3 {
+      color: var(--primary-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter-content p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .newsletter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag {
+      background: var(--primary-green);
+      color: var(--text-dark);
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background: var(--dark-bg);
+      margin: 5% auto;
+      padding: 2rem;
+      border: 1px solid var(--primary-green);
+      border-radius: 15px;
+      width: 80%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .close {
+      color: var(--primary-green);
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    .close:hover {
+      color: var(--secondary-green);
+    }
+
+    #notification-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+    }
+
+    .notification {
+      background: var(--dark-bg);
+      border: 1px solid var(--primary-green);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .notification-success {
+      border-color: #4CAF50;
+    }
+
+    .notification-success i {
+      color: #4CAF50;
+    }
+
+    .notification-error {
+      border-color: #f44336;
+    }
+
+    .notification-error i {
+      color: #f44336;
+    }
+
+    .notification-info i {
+      color: var(--primary-green);
+    }
+
+    @media (max-width: 768px) {
+      .newsletter-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .newsletter-date {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .newsletter-date .day {
+        font-size: 1.5rem;
+      }
+
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</body>
+</html>

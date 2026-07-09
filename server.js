@@ -29,10 +29,8 @@ app.use(
   })
 );
 
-// landing page (public)
-app.get("/", (req, res) => {
-  res.render("index.ejs");
-});
+// The landing page and the rest of the marketing site are static files in
+// public/ (index.html, about.html, ...), served by express.static above.
 
 // authentication (public)
 app.use(authRoutes);

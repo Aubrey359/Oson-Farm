@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products & Services - Oson Farm</title>
+  <link rel="stylesheet" href="../oson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="products.html" class="active">Products & Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="order.html">Order/Booking</a></li>
+      <li><a href="production.html">Production Data</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Products & Services</h1>
+      <p class="hero-subtitle">Discover our comprehensive range of farm products and agricultural services designed to support sustainable farming and community growth.</p>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section>
+    <div class="container">
+      <h2 class="text-center">Our Product Categories</h2>
+      <div class="product-categories">
+        <button class="category-btn active" data-category="all">All Products</button>
+        <button class="category-btn" data-category="seedlings">Coffee Seedlings</button>
+        <button class="category-btn" data-category="produce">Fresh Produce</button>
+        <button class="category-btn" data-category="livestock">Livestock Products</button>
+        <button class="category-btn" data-category="services">Farm Services</button>
+        <button class="category-btn" data-category="accommodation">Accommodation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section>
+    <div class="container">
+      <div class="products-grid">
+        <!-- Coffee Seedlings -->
+        <div class="product-card" data-category="seedlings">
+          <div class="product-image">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Coffee Seedlings</text></svg>" alt="Coffee Seedlings">
+            <div class="product-badge">Popular</div>
+          </div>
+          <div class="product-content">
+            <h3>Coffee Seedlings</h3>
+            <p>High-quality Arabica and Robusta coffee seedlings, disease-resistant and well-adapted to local growing conditions.</p>
+            <div class="product-details">
+              <div class="price">$2.50 <span>per seedling</span></div>
+              <div class="min-order">Minimum: 100 seedlings</div>
+            </div>
+            <div class="product-features">
+              <span class="feature-tag">Disease Resistant</span>
+              <span class="feature-tag">Local Adaptation</span>
+              <span class="feature-tag">Quality Guaranteed</span>
+            </div>
+            <a href="order.html" class="btn">Order Now</a>
+          </div>
+        </div>
+
+        <!-- Fresh Avocados -->
+        <div class="product-card" data-category="produce">
+          <div class="product-image">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Fresh Avocados</text></svg>" alt="Fresh Avocados">
+            <div class="product-badge">Fresh</div>
+          </div>
+          <div class="product-content">
+            <h3>Fresh Avocados</h3>
+            <p>Organic avocados grown using sustainable farming practices, rich in nutrients and perfect for healthy eating.</p>
+            <div class="product-details">
+              <div class="price">$15-25 <span>per box</span></div>
+              <div class="min-order">Seasonal availability</div>
+            </div>
+            <div class="product-features">
+              <span class="feature-tag">Organic</span>
+              <span class="feature-tag">Nutrient Rich</span>
+              <span class="feature-tag">Fresh Daily</span>
+            </div>
+            <a href="order.html" class="btn">Order Now</a>
+          </div>
+        </div>
+
+        <!-- Pineapples -->
+        <div class="product-card" data-category="produce">
+          <div class="product-image">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Pineapples</text></svg>" alt="Pineapples">
+          </div>
+          <div class="product-content">
+            <h3>Pineapples</h3>
+            <p>Sweet, juicy pineapples grown in our fields using natural farming methods without harmful chemicals.</p>
+            <div class="product-details">
+              <div class="price">$12-20 <span>per box</span></div>
+              <div class="min-order">Available year-round</div>
+            </div>
+            <div class="product-features">
+              <span class="feature-tag">Sweet & Juicy</span>
+              <span class="feature-tag">Natural Grown</span>
+              <span class="feature-tag">Year Round</span>
+            </div>
+            <a href="order.html" class="btn">Order Now</a>
+          </div>
+        </div>
+
+        <!-- Fresh Milk -->
+        <div class="product-card" data-category="livestock">
+          <div class="product-image">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Fresh Cow Milk</text></svg>" alt="Fresh Cow Milk">
+            <div class="product-badge">Daily Fresh</div>
+          </div>
+          <div class="product-content">
+            <h3>Fresh Cow Milk</h3>
+            <p>Daily fresh milk from our healthy cows, pasteurized and packaged for maximum freshness and nutrition.</p>
+            <div class="product-details">
+              <div class="price">$3-5 <span>per liter</span></div>
+              <div class="min-order">Daily delivery available</div>
+            </div>
+            <div class="product-features">
+              <span class="feature-tag">Daily Fresh</span>
+              <span class="feature-tag">Pasteurized</span>
+              <span class="feature-tag">Nutritious</span>
+            </div>
+            <a href="order.html" class="btn">Order Now</a>
+          </div>
+        </div>
+
+        <!-- Fresh Eggs -->
+        <div class="product-card" data-category="livestock">
+          <div class="product-image">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Fresh Chicken Eggs</text></svg>" alt="Fresh Chicken Eggs">
+          </div>
+          <div class="product-content">
+            <h3>Fresh Chicken Eggs</h3>
+            <p>Free-range chicken eggs from our healthy hens, rich in protein and essential nutrients.</p>
+            <div class="product-details">
+              <div class="price">$2-3 <span>per dozen</span></div>
+              <div class="min-order">Collected daily</div>
+            </div>
+            <div class="product-features">
+              <span class="feature-tag">Free Range</span>
+              <span class="feature-tag">High Protein</span>
+              <span class="feature-tag">Fresh Daily</span>
+            </div>
+            <a href="order.html" class="btn">Order Now</a>
+          </div>
+        </div>
+
+        <!-- Farm Tours -->
+        <div class="product-card" data-category="services">
+          <div class="product-image">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Farm Tours</text></svg>" alt="Farm Tours">
+            <div class="product-badge">Educational</div>
+          </div>
+          <div class="product-content">
+            <h3>Farm Tours</h3>
+            <p>Educational farm tours where visitors can learn about sustainable agriculture and see our operations firsthand.</p>
+            <div class="product-details">
+              <div class="price">$25-50 <span>per person</span></div>
+              <div class="min-order">Group discounts available</div>
+            </div>
+            <div class="product-features">
+              <span class="feature-tag">Educational</span>
+              <span class="feature-tag">Guided Tours</span>
+              <span class="feature-tag">Group Friendly</span>
+            </div>
+            <a href="order.html" class="btn">Book Tour</a>
+          </div>
+        </div>
+
+        <!-- Farm Stays -->
+        <div class="product-card" data-category="accommodation">
+          <div class="product-image">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Farm Stays</text></svg>" alt="Farm Stays">
+            <div class="product-badge">Unique Experience</div>
+          </div>
+          <div class="product-content">
+            <h3>Farm Stays & BnB</h3>
+            <p>Comfortable accommodation on our farm for an authentic agricultural experience with modern amenities.</p>
+            <div class="product-details">
+              <div class="price">$80-120 <span>per night</span></div>
+              <div class="min-order">Includes meals</div>
+            </div>
+            <div class="product-features">
+              <span class="feature-tag">Comfortable</span>
+              <span class="feature-tag">Meals Included</span>
+              <span class="feature-tag">Authentic</span>
+            </div>
+            <a href="order.html" class="btn">Book Stay</a>
+          </div>
+        </div>
+
+        <!-- Delivery Service -->
+        <div class="product-card" data-category="services">
+          <div class="product-image">
+            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'><rect width='300' height='200' fill='%231a4d1a'/><text x='150' y='100' text-anchor='middle' fill='%237fff00' font-family='Arial' font-size='16'>Delivery Service</text></svg>" alt="Delivery Service">
+          </div>
+          <div class="product-content">
+            <h3>Delivery Service</h3>
+            <p>Reliable delivery service for all our products within a 50-mile radius, ensuring fresh products reach your doorstep.</p>
+            <div class="product-details">
+              <div class="price">$5-15 <span>delivery fee</span></div>
+              <div class="min-order">Same-day available</div>
+            </div>
+            <div class="product-features">
+              <span class="feature-tag">Reliable</span>
+              <span class="feature-tag">Fresh Delivery</span>
+              <span class="feature-tag">Same Day</span>
+            </div>
+            <a href="order.html" class="btn">Schedule Delivery</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="stats-section">
+    <div class="container">
+      <h2 class="text-center">Additional Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Agricultural Training</h3>
+          <p>Comprehensive training programs for farmers on sustainable agriculture practices, crop management, and modern farming techniques.</p>
+          <ul>
+            <li>Sustainable farming methods</li>
+            <li>Crop rotation techniques</li>
+            <li>Soil health management</li>
+            <li>Pest control strategies</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Equipment Rental</h3>
+          <p>Rent modern farming equipment and machinery to support your agricultural operations with well-maintained tools.</p>
+          <ul>
+            <li>Tractors and tillers</li>
+            <li>Planting equipment</li>
+            <li>Harvesting tools</li>
+            <li>Irrigation systems</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Farm Consultation</h3>
+          <p>Expert consultation services to help optimize your farm operations, improve yields, and implement sustainable practices.</p>
+          <ul>
+            <li>Farm planning and design</li>
+            <li>Yield optimization</li>
+            <li>Sustainability assessment</li>
+            <li>Market analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section>
+    <div class="container text-center">
+      <h2>Ready to Order?</h2>
+      <p>Browse our products and services, then place your order or book a farm visit.</p>
+      <div class="cta-buttons">
+        <a href="order.html" class="cta-btn primary">
+          <i class="fas fa-shopping-cart"></i>
+          Place Order
+        </a>
+        <a href="contact.html" class="cta-btn">
+          <i class="fas fa-phone"></i>
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Oson Farm. All rights reserved. | Quality products and services for sustainable agriculture</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Product category filtering
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-category');
+
+        // Show/hide product cards
+        productCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'block';
+            setTimeout(() => {
+              card.classList.add('animate-in');
+            }, 100);
+          } else {
+            card.style.display = 'none';
+            card.classList.remove('animate-in');
+          }
+        });
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections and product cards
+    document.querySelectorAll('section, .product-card, .service-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+  <style>
+    /* Additional styles for products page */
+    .product-categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .category-btn {
+      padding: 0.8rem 1.5rem;
+      background: transparent;
+      color: var(--primary-green);
+      border: 2px solid var(--primary-green);
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: var(--primary-green);
+      color: var(--text-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px var(--shadow-medium);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .product-card {
+      background: linear-gradient(135deg, #1e2e1e 0%, #1a4d1a 100%);
+      border-radius: 15px;
+      border: 1px solid var(--primary-green);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px var(--shadow-medium);
+    }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary-green);
+      color: var(--text-dark);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .product-content {
+      padding: 1.5rem;
+    }
+
+    .product-content h3 {
+      color: var(--primary-green);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-content p {
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .product-details {
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-green);
+      margin-bottom: 0.25rem;
+    }
+
+    .price span {
+      font-size: 1rem;
+      font-weight: normal;
+      opacity: 0.8;
+    }
+
+    .min-order {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      opacity: 0.8;
+    }
+
+    .product-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-tag {
+      background: rgba(127, 255, 0, 0.2);
+      color: var(--primary-green);
+      padding: 0.25rem 0.75rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .service-card {
+      background: linear-gradient(135deg, #1e2e1e 0%, #1a4d1a 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid var(--primary-green);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px var(--shadow-medium);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      color: var(--primary-green);
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      color: var(--primary-green);
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .service-card ul {
+      text-align: left;
+      color: var(--text-light);
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-card li {
+      padding: 0.25rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .service-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary-green);
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-categories {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .category-btn {
+        width: 200px;
+        text-align: center;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>

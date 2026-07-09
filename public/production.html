@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Production Data - Oson Farm</title>
+  <link rel="stylesheet" href="../oson.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="products.html">Products & Services</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="order.html">Order/Booking</a></li>
+      <li><a href="production.html" class="active">Production Data</a></li>
+      <li><a href="newsletter.html">Newsletter</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Production Data</h1>
+      <p class="hero-subtitle">Real-time insights into our farm operations, production metrics, and sustainability performance.</p>
+    </div>
+  </section>
+
+  <!-- Admin Login Section -->
+  <section id="admin-login" class="admin-section">
+    <div class="container">
+      <div class="card">
+        <h2><i class="fas fa-lock"></i> Admin Access</h2>
+        <p>Enter admin credentials to access detailed production data and management tools.</p>
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label for="admin-username">Username</label>
+            <input type="text" id="admin-username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" name="password" required>
+          </div>
+          <button type="submit" class="btn">
+            <i class="fas fa-sign-in-alt"></i>
+            Login
+          </button>
+        </form>
+        <p class="demo-credentials">Demo: username: <strong>admin</strong>, password: <strong>farm2024</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Production Dashboard (Hidden until login) -->
+  <section id="production-dashboard" class="dashboard-section" style="display: none;">
+    <div class="container">
+      <!-- Dashboard Header -->
+      <div class="dashboard-header">
+        <h2><i class="fas fa-chart-line"></i> Production Dashboard</h2>
+        <div class="dashboard-controls">
+          <button class="btn btn-outline" onclick="refreshData()">
+            <i class="fas fa-sync-alt"></i>
+            Refresh Data
+          </button>
+          <button class="btn btn-outline" onclick="exportData()">
+            <i class="fas fa-download"></i>
+            Export Data
+          </button>
+          <button class="btn btn-outline" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+
+      <!-- Key Metrics Overview -->
+      <div class="stats-section">
+        <h3>Key Production Metrics</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number counter" data-target="32000">0</span>
+            <span class="stat-label">Liters of Milk (Annual)</span>
+            <div class="stat-trend up">
+              <i class="fas fa-arrow-up"></i>
+              <span>+12% from last year</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-target="4500">0</span>
+            <span class="stat-label">Chickens Raised</span>
+            <div class="stat-trend up">
+              <i class="fas fa-arrow-up"></i>
+              <span>+8% from last year</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-target="120">0</span>
+            <span class="stat-label">Tons of Crops</span>
+            <div class="stat-trend up">
+              <i class="fas fa-arrow-up"></i>
+              <span>+15% from last year</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number counter" data-target="95">0</span>
+            <span class="stat-label">% Sustainability Score</span>
+            <div class="stat-trend up">
+              <i class="fas fa-arrow-up"></i>
+              <span>+3% from last year</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Production Data -->
+      <div class="production-grid">
+        <!-- Dairy Production -->
+        <div class="card production-card">
+          <h3><i class="fas fa-cow"></i> Dairy Production</h3>
+          <div class="production-metrics">
+            <div class="metric">
+              <span class="metric-label">Daily Milk Production</span>
+              <span class="metric-value">87.7 L</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Active Cows</span>
+              <span class="metric-value">24</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Average per Cow</span>
+              <span class="metric-value">3.65 L/day</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Quality Score</span>
+              <span class="metric-value">98.5%</span>
+            </div>
+          </div>
+          <div class="production-chart">
+            <canvas id="milkChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+
+        <!-- Poultry Production -->
+        <div class="card production-card">
+          <h3><i class="fas fa-drumstick-bite"></i> Poultry Production</h3>
+          <div class="production-metrics">
+            <div class="metric">
+              <span class="metric-label">Chickens Available</span>
+              <span class="metric-value">450</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Daily Eggs</span>
+              <span class="metric-value">380</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Feed Efficiency</span>
+              <span class="metric-value">2.1:1</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Health Rate</span>
+              <span class="metric-value">99.2%</span>
+            </div>
+          </div>
+          <div class="production-chart">
+            <canvas id="poultryChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+
+        <!-- Crop Production -->
+        <div class="card production-card">
+          <h3><i class="fas fa-seedling"></i> Crop Production</h3>
+          <div class="production-metrics">
+            <div class="metric">
+              <span class="metric-label">Coffee Seedlings</span>
+              <span class="metric-value">2,500</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Avocado Trees</span>
+              <span class="metric-value">180</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Pineapple Plants</span>
+              <span class="metric-value">320</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Yield per Acre</span>
+              <span class="metric-value">2.8 tons</span>
+            </div>
+          </div>
+          <div class="production-chart">
+            <canvas id="cropChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+
+        <!-- Environmental Impact -->
+        <div class="card production-card">
+          <h3><i class="fas fa-leaf"></i> Environmental Impact</h3>
+          <div class="production-metrics">
+            <div class="metric">
+              <span class="metric-label">Water Saved</span>
+              <span class="metric-value">15,000 L</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">CO2 Reduced</span>
+              <span class="metric-value">2.3 tons</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Compost Produced</span>
+              <span class="metric-value">8.5 tons</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Biodiversity Index</span>
+              <span class="metric-value">87%</span>
+            </div>
+          </div>
+          <div class="production-chart">
+            <canvas id="environmentChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activities -->
+      <div class="card">
+        <h3><i class="fas fa-history"></i> Recent Activities</h3>
+        <div class="activity-feed">
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-milk"></i>
+            </div>
+            <div class="activity-content">
+              <h4>Milk Collection Completed</h4>
+              <p>Collected 87.7 liters of milk from 24 cows</p>
+              <span class="activity-time">2 hours ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-egg"></i>
+            </div>
+            <div class="activity-content">
+              <h4>Egg Collection</h4>
+              <p>Collected 380 eggs from poultry house</p>
+              <span class="activity-time">4 hours ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <div class="activity-content">
+              <h4>Seedling Planting</h4>
+              <p>Planted 150 new coffee seedlings in section B</p>
+              <span class="activity-time">1 day ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <div class="activity-content">
+              <h4>Delivery Completed</h4>
+              <p>Delivered 25 boxes of fresh produce to local market</p>
+              <span class="activity-time">2 days ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Management -->
+      <div class="card">
+        <h3><i class="fas fa-database"></i> Data Management</h3>
+        <div class="data-management">
+          <div class="data-actions">
+            <button class="btn" onclick="addProductionData()">
+              <i class="fas fa-plus"></i>
+              Add Production Data
+            </button>
+            <button class="btn btn-outline" onclick="viewReports()">
+              <i class="fas fa-chart-bar"></i>
+              View Reports
+            </button>
+            <button class="btn btn-outline" onclick="backupData()">
+              <i class="fas fa-save"></i>
+              Backup Data
+            </button>
+          </div>
+          <div class="data-info">
+            <p><strong>Last Updated:</strong> <span id="last-updated">Just now</span></p>
+            <p><strong>Data Points:</strong> <span id="data-points">1,247</span></p>
+            <p><strong>Storage Used:</strong> <span id="storage-used">2.3 MB</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Oson Farm. All rights reserved. | Sustainable Agriculture Data</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Notification Container -->
+  <div id="notification-container"></div>
+
+  <script>
+    // Admin login functionality
+    document.getElementById('admin-login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('admin-username').value;
+      const password = document.getElementById('admin-password').value;
+      
+      // Simple demo authentication
+      if (username === 'admin' && password === 'farm2024') {
+        showNotification('Login successful! Loading dashboard...', 'success');
+        setTimeout(() => {
+          document.getElementById('admin-login').style.display = 'none';
+          document.getElementById('production-dashboard').style.display = 'block';
+          initializeDashboard();
+        }, 1000);
+      } else {
+        showNotification('Invalid credentials. Please try again.', 'error');
+      }
+    });
+
+    // Dashboard initialization
+    function initializeDashboard() {
+      // Initialize counters
+      animateCounters();
+      
+      // Initialize charts
+      initializeCharts();
+      
+      // Update last updated time
+      updateLastUpdated();
+    }
+
+    // Counter animation
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200;
+
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const count = parseInt(counter.innerText);
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(() => animateCounters(), 1);
+        } else {
+          counter.innerText = target;
+        }
+      });
+    }
+
+    // Initialize charts (simplified version)
+    function initializeCharts() {
+      // This would normally use Chart.js or similar library
+      // For demo purposes, we'll create simple visual representations
+      createSimpleChart('milkChart', [85, 87, 89, 86, 88, 90, 87.7], 'Milk Production (L)');
+      createSimpleChart('poultryChart', [375, 380, 385, 378, 382, 380, 380], 'Egg Production');
+      createSimpleChart('cropChart', [2.5, 2.6, 2.7, 2.8, 2.9, 2.8, 2.8], 'Crop Yield (tons)');
+      createSimpleChart('environmentChart', [85, 86, 87, 88, 89, 90, 87], 'Sustainability Score (%)');
+    }
+
+    // Create simple chart visualization
+    function createSimpleChart(canvasId, data, label) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, width, height);
+      
+      // Set up chart
+      const padding = 40;
+      const chartWidth = width - 2 * padding;
+      const chartHeight = height - 2 * padding;
+      
+      // Draw axes
+      ctx.strokeStyle = '#7fff00';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(padding, padding);
+      ctx.lineTo(padding, height - padding);
+      ctx.lineTo(width - padding, height - padding);
+      ctx.stroke();
+      
+      // Draw data line
+      ctx.strokeStyle = '#7fff00';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      
+      const stepX = chartWidth / (data.length - 1);
+      const maxValue = Math.max(...data);
+      const minValue = Math.min(...data);
+      const valueRange = maxValue - minValue;
+      
+      data.forEach((value, index) => {
+        const x = padding + index * stepX;
+        const y = height - padding - ((value - minValue) / valueRange) * chartHeight;
+        
+        if (index === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      });
+      
+      ctx.stroke();
+      
+      // Draw data points
+      ctx.fillStyle = '#7fff00';
+      data.forEach((value, index) => {
+        const x = padding + index * stepX;
+        const y = height - padding - ((value - minValue) / valueRange) * chartHeight;
+        
+        ctx.beginPath();
+        ctx.arc(x, y, 4, 0, 2 * Math.PI);
+        ctx.fill();
+      });
+    }
+
+    // Dashboard functions
+    function refreshData() {
+      showNotification('Refreshing data...', 'info');
+      setTimeout(() => {
+        showNotification('Data refreshed successfully!', 'success');
+        updateLastUpdated();
+      }, 1500);
+    }
+
+    function exportData() {
+      showNotification('Exporting data to CSV...', 'info');
+      setTimeout(() => {
+        showNotification('Data exported successfully!', 'success');
+      }, 2000);
+    }
+
+    function logout() {
+      document.getElementById('admin-login').style.display = 'block';
+      document.getElementById('production-dashboard').style.display = 'none';
+      document.getElementById('admin-login-form').reset();
+      showNotification('Logged out successfully', 'info');
+    }
+
+    function addProductionData() {
+      showNotification('Opening data entry form...', 'info');
+      // This would open a modal or redirect to data entry page
+    }
+
+    function viewReports() {
+      showNotification('Generating reports...', 'info');
+      // This would open reports page or modal
+    }
+
+    function backupData() {
+      showNotification('Creating backup...', 'info');
+      setTimeout(() => {
+        showNotification('Backup completed successfully!', 'success');
+      }, 3000);
+    }
+
+    function updateLastUpdated() {
+      const now = new Date();
+      const timeString = now.toLocaleString();
+      document.getElementById('last-updated').textContent = timeString;
+    }
+
+    // Notification system
+    function showNotification(message, type = 'info') {
+      const notification = document.createElement('div');
+      notification.className = `notification notification-${type}`;
+      notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+        <span>${message}</span>
+      `;
+      
+      document.getElementById('notification-container').appendChild(notification);
+      
+      setTimeout(() => notification.classList.add('show'), 100);
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Animate elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections and cards
+    document.querySelectorAll('section, .card, .production-card').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+  <style>
+    /* Additional styles for production page */
+    .admin-section {
+      margin: 2rem 0;
+    }
+
+    .demo-credentials {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(127, 255, 0, 0.1);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .dashboard-section {
+      margin-top: 2rem;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .dashboard-controls {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-trend {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .stat-trend.up {
+      color: #4CAF50;
+    }
+
+    .stat-trend.down {
+      color: #f44336;
+    }
+
+    .production-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .production-card {
+      position: relative;
+    }
+
+    .production-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .metric-label {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      opacity: 0.8;
+    }
+
+    .metric-value {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--primary-green);
+    }
+
+    .production-chart {
+      margin-top: 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .activity-feed {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(127, 255, 0, 0.1);
+    }
+
+    .activity-item:last-child {
+      border-bottom: none;
+    }
+
+    .activity-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-dark);
+      font-size: 1.2rem;
+    }
+
+    .activity-content h4 {
+      margin: 0 0 0.25rem 0;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    .activity-content p {
+      margin: 0 0 0.5rem 0;
+      color: var(--text-light);
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    .activity-time {
+      font-size: 0.8rem;
+      color: var(--primary-green);
+    }
+
+    .data-management {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .data-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .data-info {
+      text-align: right;
+    }
+
+    .data-info p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    #notification-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+    }
+
+    .notification {
+      background: var(--dark-bg);
+      border: 1px solid var(--primary-green);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      max-width: 400px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .notification-success {
+      border-color: #4CAF50;
+    }
+
+    .notification-success i {
+      color: #4CAF50;
+    }
+
+    .notification-error {
+      border-color: #f44336;
+    }
+
+    .notification-error i {
+      color: #f44336;
+    }
+
+    .notification-info i {
+      color: var(--primary-green);
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .dashboard-controls {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .production-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .production-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .data-management {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .data-info {
+        text-align: center;
+      }
+
+      .data-actions {
+        justify-content: center;
+      }
+    }
+  </style>
+</body>
+</html>

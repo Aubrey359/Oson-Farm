@@ -69,5 +69,10 @@ routes/
 lib/
   utils.js             Helpers that shape data for the Chart.js views
 views/                 EJS page templates (partials start with _)
-public/                Stylesheets and client-side JS served statically
+public/                Served statically at the site root:
+                       - index.html, about.html, products.html, ... the
+                         Oson Farm marketing website (green theme, oson.css)
+                       - main.css, dashboard.css, main.js for the farmer app
 ```
+
+The homepage (`/`) is the marketing site's `index.html`; the farmer management app lives behind `/login` (linked from the nav as "Farmer Portal").
