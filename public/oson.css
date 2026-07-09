@@ -859,3 +859,26 @@ nav a.active {
         grid-template-columns: 1fr;
     }
 }
+
+/* ---- Nav fit fix: keep all links on one row on desktop ---- */
+nav ul {
+    gap: 0.5rem;
+    padding: 0 0.75rem;
+}
+
+nav a {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* Farmer Portal styled as a stand-out button */
+nav a.portal-link {
+    background: var(--primary-green);
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+nav a.portal-link:hover {
+    background: var(--secondary-green);
+}
